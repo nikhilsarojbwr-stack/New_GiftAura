@@ -2,7 +2,7 @@
 
 Automatically Generated
 
-Generated On: 2026-08-26 15:15:05
+Generated On: 2026-08-26 15:35:27
 
 ---
 
@@ -64,9 +64,11 @@ gap
 │   ├── shop
 │   │   └── shop.html
 │   └── __init__.py
+├── .dockerignore
 ├── .gitignore
 ├── build.py
 ├── dev_tools.py
+├── Dockerfile
 ├── flow.md
 ├── main.py
 ├── PROJECT_STRUCTURE.md
@@ -78,5 +80,8 @@ gap
 ## Statistics
 
 - Folders: 16
-- Files: 47
+- Files: 49
 - Python files: 4
+- Dockerfiles: 1
+- .dockerignore files: 1
+- Data files (JSON, YAML, CSV, etc.): 5
