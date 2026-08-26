@@ -1,0 +1,347 @@
+{
+  "birthday": {
+    "title": "Birthday",
+    "icon": "🎂",
+    "visual_label": "LET'S CELEBRATE",
+    "description": "Highest everyday demand",
+    "hero_text": "Make every birthday magical with our stunning setups. From intimate gatherings to grand parties, we bring your vision to life.",
+    "image": "/static/images/celebrations/birthday.jpg",
+    "gallery": [
+      "/static/images/celebrations/birthday-gallery1.jpg",
+      "/static/images/celebrations/birthday-gallery2.jpg",
+      "/static/images/celebrations/birthday-gallery3.jpg"
+    ],
+    "pricing": {
+      "starting_at": "₹4,999",
+      "includes": [
+        "Balloon arches & columns",
+        "Table centrepieces",
+        "Backdrop design",
+        "Lighting setup",
+        "Cake table decor"
+      ]
+    },
+    "sub_categories": [
+      {
+        "name": "Balloon Decor",
+        "description": "Colourful balloons, arches, and custom balloon sculptures."
+      },
+      {
+        "name": "Room Setup",
+        "description": "Complete room transformation with drapes, lights, and props."
+      },
+      {
+        "name": "Cafe & Outdoor",
+        "description": "Cafe birthday setups with flower walls and photo booths."
+      }
+    ],
+    "features": [
+      "Customised to your theme",
+      "On‑time setup & teardown",
+      "Fresh flowers & premium balloons",
+      "Team of creative decorators"
+    ],
+    "testimonials": [
+      {
+        "name": "Priya & Family",
+        "review": "The birthday decor was stunning! The team arrived early and everything was perfect.",
+        "rating": 5
+      },
+      {
+        "name": "Rahul Sharma",
+        "review": "Amazing experience! Our daughter's birthday was a huge hit because of the decorations.",
+        "rating": 5
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How far in advance should I book?",
+        "a": "We recommend booking at least 7 days in advance, but we can accommodate last-minute requests if available."
+      },
+      {
+        "q": "Do you provide catering?",
+        "a": "We focus on decor, but we can connect you with trusted catering partners."
+      }
+    ]
+  },
+  "anniversary": {
+    "title": "Anniversary",
+    "icon": "❤️",
+    "visual_label": "TOGETHER FOREVER",
+    "description": "Strong couple segment",
+    "hero_text": "Celebrate your love story with our romantic decorations – from intimate dinners to grand anniversary parties.",
+    "image": "/static/images/celebrations/anniversary.jpg",
+    "gallery": [
+      "/static/images/celebrations/anniversary-gallery1.jpg",
+      "/static/images/celebrations/anniversary-gallery2.jpg",
+      "/static/images/celebrations/anniversary-gallery3.jpg"
+    ],
+    "pricing": {
+      "starting_at": "₹6,999",
+      "includes": [
+        "Rose petal arrangements",
+        "Candlelight setup",
+        "Romantic backdrop",
+        "Dinner table decor",
+        "Surprise elements"
+      ]
+    },
+    "sub_categories": [
+      {
+        "name": "Romantic Dinners",
+        "description": "Elegant table settings with candles, flowers, and soft lighting."
+      },
+      {
+        "name": "Surprise Setups",
+        "description": "Hidden surprises, photo frames, and love letters decoration."
+      },
+      {
+        "name": "Cafe Anniversary",
+        "description": "Transform a cafe into a romantic getaway for two."
+      }
+    ],
+    "features": [
+      "Personalised love quotes",
+      "Premium floral arrangements",
+      "Soft music & lighting",
+      "Memory photo collages"
+    ],
+    "testimonials": [
+      {
+        "name": "Amit & Sneha",
+        "review": "Our 10th anniversary was magical! The decor was beyond our expectations.",
+        "rating": 5
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Can you customise the colour theme?",
+        "a": "Absolutely! We adapt colours to your preference – red, gold, white, or any theme."
+      }
+    ]
+  },
+  "romantic": {
+    "title": "Romantic Surprises",
+    "icon": "💕",
+    "visual_label": "JUST FOR YOU",
+    "description": "Perfect for 20–40",
+    "hero_text": "Surprise your loved one with a beautifully decorated setting – perfect for dates, anniversaries, or spontaneous romance.",
+    "image": "/static/images/celebrations/romantic.jpg",
+    "gallery": [
+      "/static/images/celebrations/romantic-gallery1.jpg",
+      "/static/images/celebrations/romantic-gallery2.jpg",
+      "/static/images/celebrations/romantic-gallery3.jpg"
+    ],
+    "pricing": {
+      "starting_at": "₹5,499",
+      "includes": [
+        "Rose petals & candles",
+        "Photo collage",
+        "Surprise box",
+        "Balloon arch",
+        "Personalised message board"
+      ]
+    },
+    "sub_categories": [
+      {
+        "name": "Date Night Setup",
+        "description": "Cosy dinner setups with mood lighting and a romantic ambience."
+      },
+      {
+        "name": "Midnight Surprise",
+        "description": "Late‑night setups with fairy lights and a dramatic reveal."
+      },
+      {
+        "name": "Rose & Balloon",
+        "description": "Classic combination of roses and heart‑shaped balloons."
+      }
+    ],
+    "features": [
+      "Customised love notes",
+      "LED candles (safe!)",
+      "Soft music recommendations",
+      "Photo keepsakes"
+    ],
+    "testimonials": [
+      {
+        "name": "Deepak & Ria",
+        "review": "I proposed to my girlfriend with their setup – she said yes! It was perfect.",
+        "rating": 5
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Can I add a custom message?",
+        "a": "Yes, we include a personalised message board with your special words."
+      }
+    ]
+  },
+  "proposal": {
+    "title": "Proposal",
+    "icon": "💍",
+    "visual_label": "SAY YES",
+    "description": "High-intent service",
+    "hero_text": "Make the moment unforgettable with our proposal setups – from intimate to grand, we create the perfect stage for your big question.",
+    "image": "/static/images/celebrations/proposal.jpg",
+    "gallery": [
+      "/static/images/celebrations/proposal-gallery1.jpg",
+      "/static/images/celebrations/proposal-gallery2.jpg",
+      "/static/images/celebrations/proposal-gallery3.jpg"
+    ],
+    "pricing": {
+      "starting_at": "₹8,999",
+      "includes": [
+        "Marry Me backdrop",
+        "Rose pathway",
+        "Ring box display",
+        "String lights",
+        "Photography corner"
+      ]
+    },
+    "sub_categories": [
+      {
+        "name": "Rooftop Proposal",
+        "description": "Stunning rooftop setups with panoramic views and starry lighting."
+      },
+      {
+        "name": "Cafe Proposal",
+        "description": "Private cafe corners with romantic decor and live music options."
+      },
+      {
+        "name": "Ring Ceremony Setup",
+        "description": "Elegant stage with floral rings and a centrepiece for the ring."
+      }
+    ],
+    "features": [
+      "Customised proposal script board",
+      "Fresh flower petals",
+      "Hidden camera friendly",
+      "Private consultation"
+    ],
+    "testimonials": [
+      {
+        "name": "Vikram & Anjali",
+        "review": "The setup was breathtaking! She said yes immediately. Highly recommended!",
+        "rating": 5
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Can you help with the surprise logistics?",
+        "a": "Yes, we coordinate with you to ensure everything is hidden until the right moment."
+      }
+    ]
+  },
+  "cafe": {
+    "title": "Cafe Celebrations",
+    "icon": "☕",
+    "visual_label": "CELEBRATE OUT",
+    "description": "Your unique positioning",
+    "hero_text": "Transform your cafe into a celebration haven – ideal for birthdays, proposals, or any special gathering in a cosy, social setting.",
+    "image": "/static/images/celebrations/cafe.jpg",
+    "gallery": [
+      "/static/images/celebrations/cafe-gallery1.jpg",
+      "/static/images/celebrations/cafe-gallery2.jpg",
+      "/static/images/celebrations/cafe-gallery3.jpg"
+    ],
+    "pricing": {
+      "starting_at": "₹7,499",
+      "includes": [
+        "Table decorations",
+        "Balloon installations",
+        "Photo backdrop",
+        "Cafe‑specific lighting",
+        "Customised menu cards"
+      ]
+    },
+    "sub_categories": [
+      {
+        "name": "Cafe Birthday",
+        "description": "Bright, fun setups perfect for birthday gatherings with friends."
+      },
+      {
+        "name": "Cafe Proposal",
+        "description": "Intimate proposal setups in a cozy cafe corner."
+      },
+      {
+        "name": "Private Celebration",
+        "description": "Book the whole cafe for your private celebration with exclusive decor."
+      }
+    ],
+    "features": [
+      "Cafe‑friendly decor (non‑intrusive)",
+      "Props for photos",
+      "Themed tableware",
+      "Staff coordination"
+    ],
+    "testimonials": [
+      {
+        "name": "Nisha & Friends",
+        "review": "We celebrated our bestie's birthday at the cafe – the decor made it so special!",
+        "rating": 5
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Do you work with any cafe partner?",
+        "a": "We can set up at any cafe of your choice – we coordinate with the management."
+      }
+    ]
+  },
+  "custom": {
+    "title": "Custom Decoration",
+    "icon": "🎈",
+    "visual_label": "MAKE IT YOURS",
+    "description": "Captures everything else",
+    "hero_text": "We bring your vision to life with custom designs – from themed parties to any unique requirement, we create decor that is truly yours.",
+    "image": "/static/images/celebrations/custom.jpg",
+    "gallery": [
+      "/static/images/celebrations/custom-gallery1.jpg",
+      "/static/images/celebrations/custom-gallery2.jpg",
+      "/static/images/celebrations/custom-gallery3.jpg"
+    ],
+    "pricing": {
+      "starting_at": "Custom quote",
+      "includes": [
+        "Concept discussion",
+        "Mood board",
+        "Custom prop creation",
+        "On‑site setup",
+        "Teardown"
+      ]
+    },
+    "sub_categories": [
+      {
+        "name": "Theme Decoration",
+        "description": "Any theme you imagine – from superhero to vintage to bohemian."
+      },
+      {
+        "name": "Backdrop Setup",
+        "description": "Custom backdrops for photos, events, or product launches."
+      },
+      {
+        "name": "Reference‑Based",
+        "description": "We replicate or adapt any design you share from Pinterest or magazines."
+      }
+    ],
+    "features": [
+      "Endless customisation",
+      "Direct designer collaboration",
+      "Use of premium materials",
+      "Flexible budget options"
+    ],
+    "testimonials": [
+      {
+        "name": "Rita & Family",
+        "review": "The custom theme they created for our anniversary was exactly what we wanted!",
+        "rating": 5
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How long does a custom design take?",
+        "a": "We recommend a 2‑week lead time for fully custom designs, but we can expedite if needed."
+      }
+    ]
+  }
+}

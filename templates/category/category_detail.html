@@ -1,0 +1,205 @@
+{% extends 'shared/base.html' %}
+
+{% block title %}{{ category.title }} — GiftAura{% endblock %}
+
+{% block content %}
+
+<!-- ============================================================
+     BREADCRUMB
+     ============================================================ -->
+<div class="breadcrumb-wrapper">
+    <div class="container">
+        <a href="/">Home</a> &gt; <span>{{ category.title }}</span>
+    </div>
+</div>
+
+<!-- ============================================================
+     CATEGORY HERO
+     ============================================================ -->
+<section class="category-hero" style="background-image: url('{{ category.image }}');">
+    <div class="category-hero-overlay">
+        <div class="container">
+            <div class="category-hero-content">
+                <span class="category-hero-icon">{{ category.icon }}</span>
+                <h1>{{ category.title }}</h1>
+                <p>{{ category.hero_text }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SERVICES LIST
+     ============================================================ -->
+<section class="category-services">
+    <div class="container">
+        <h2>Our {{ category.title }} Services</h2>
+        <p class="services-intro">Choose from our curated list of decoration services for your special occasion.</p>
+        <div class="services-grid">
+            {% for service in category.services %}
+            <div class="service-item">
+                <span class="service-icon">✦</span>
+                <span class="service-name">{{ service }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SUB-CATEGORIES (NEW)
+     ============================================================ -->
+{% if category.sub_categories %}
+<section class="category-sub-categories">
+    <div class="container">
+        <h2>How We Can Help</h2>
+        <p class="sub-intro">Choose the perfect setup for your {{ category.title }} celebration.</p>
+        <div class="sub-categories-grid">
+            {% for sub in category.sub_categories %}
+            <div class="sub-category-card">
+                <h3>{{ sub.name }}</h3>
+                <p>{{ sub.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- ============================================================
+     PRICING (NEW)
+     ============================================================ -->
+{% if category.pricing %}
+<section class="category-pricing">
+    <div class="container">
+        <div class="pricing-card">
+            <h2>Pricing</h2>
+            <div class="pricing-info">
+                <div class="pricing-start">
+                    <span class="price-label">Starting at</span>
+                    <span class="price-amount">{{ category.pricing.starting_at }}</span>
+                </div>
+                <div class="pricing-includes">
+                    <h4>What's Included:</h4>
+                    <ul>
+                        {% for item in category.pricing.includes %}
+                        <li>✓ {{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- ============================================================
+     FEATURES (NEW)
+     ============================================================ -->
+{% if category.features %}
+<section class="category-features">
+    <div class="container">
+        <h2>Why Choose Us for {{ category.title }}?</h2>
+        <div class="features-grid">
+            {% for feature in category.features %}
+            <div class="feature-item">
+                <span class="feature-icon">✦</span>
+                <span class="feature-name">{{ feature }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- ============================================================
+     GALLERY (NEW)
+     ============================================================ -->
+{% if category.gallery %}
+<section class="category-gallery">
+    <div class="container">
+        <h2>Our Work</h2>
+        <p class="gallery-intro">Take a look at our recent {{ category.title }} decorations.</p>
+        <div class="gallery-grid">
+            {% for image in category.gallery %}
+            <div class="gallery-item">
+                <img src="{{ image }}" alt="{{ category.title }} decoration">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- ============================================================
+     TESTIMONIALS (NEW)
+     ============================================================ -->
+{% if category.testimonials %}
+<section class="category-testimonials">
+    <div class="container">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonials-grid">
+            {% for testimonial in category.testimonials %}
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    {% for i in range(testimonial.rating) %}★{% endfor %}
+                </div>
+                <p class="testimonial-review">"{{ testimonial.review }}"</p>
+                <p class="testimonial-name">— {{ testimonial.name }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- ============================================================
+     FAQS (NEW)
+     ============================================================ -->
+{% if category.faqs %}
+<section class="category-faqs">
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+            {% for faq in category.faqs %}
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    {{ faq.q }}
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer" style="display: none;">
+                    <p>{{ faq.a }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+
+<!-- ============================================================
+     TRUST BAR
+     ============================================================ -->
+
+
+
+
+<!-- ============================================================
+     JAVASCRIPT for FAQ Toggle
+     ============================================================ -->
+<script>
+    function toggleFaq(button) {
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector('.faq-icon');
+        if (answer.style.display === 'none') {
+            answer.style.display = 'block';
+            icon.textContent = '−';
+        } else {
+            answer.style.display = 'none';
+            icon.textContent = '+';
+        }
+    }
+</script>
+
+{% endblock %}
