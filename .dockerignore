@@ -7,10 +7,10 @@ env
 README.md
 build.py
 build/
-data/
+
 *.bat
 *.md
-*.txt
+
 demo.html
 dev_tools.py
 flow.md

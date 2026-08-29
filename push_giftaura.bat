@@ -1,7 +1,7 @@
 @echo off
 title GiftAura+ - GitHub Auto Push
 
-cd /d D:\Gift
+cd /d D:\gap
 
 echo.
 echo ==========================================
@@ -42,7 +42,7 @@ if not exist ".git" (
     echo Run these commands manually once:
     echo.
     echo git init
-    echo git remote add origin https://github.com/nikhilsarojbwr-stack/GiftauraCa2.git
+    echo git remote add origin https://github.com/nikhilsarojbwr-stack/New_GiftAura
     echo git branch -M main
     echo git push -u origin main
     echo.
@@ -176,7 +176,7 @@ echo Local folder:
 echo D:\Gift
 echo.
 echo GitHub:
-echo https://github.com/nikhilsarojbwr-stack/GiftauraCa2
+echo https://github.com/nikhilsarojbwr-stack/New_GiftAura
 echo.
 echo ==========================================
 echo.
