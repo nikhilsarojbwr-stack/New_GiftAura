@@ -1,186 +1,62 @@
 @echo off
-title GiftAura+ - GitHub Auto Push
+title GiftAura+ - Simple Auto Push
 
 cd /d D:\gap
 
 echo.
 echo ==========================================
-echo       GiftAura+ GitHub Auto Push
+echo     GiftAura+ Auto Push
 echo ==========================================
 echo.
 
-REM ============================================================
-REM 1. CHECK GIT
-REM ============================================================
-
-echo [1/6] Checking Git installation...
+REM ==========================================
+REM 1. Pull latest changes
+REM ==========================================
+echo [1/4] Pulling latest from GitHub...
 echo.
 
-if not exist "C:\Program Files\Git\cmd\git.exe" (
-    echo ERROR: Git was not found.
-    echo.
-    echo Expected:
-    echo C:\Program Files\Git\cmd\git.exe
-    echo.
-    pause
-    exit /b 1
-)
-
-echo Git found successfully.
-echo.
-
-REM ============================================================
-REM 2. CHECK GIT REPOSITORY
-REM ============================================================
-
-echo [2/6] Checking Git repository...
-echo.
-
-if not exist ".git" (
-    echo ERROR: D:\Gift is not a Git repository.
-    echo.
-    echo Run these commands manually once:
-    echo.
-    echo git init
-    echo git remote add origin https://github.com/nikhilsarojbwr-stack/New_GiftAura
-    echo git branch -M main
-    echo git push -u origin main
-    echo.
-    pause
-    exit /b 1
-)
-
-echo Git repository found.
-echo.
-
-REM ============================================================
-REM 3. CHECK REMOTE
-REM ============================================================
-
-echo [3/6] Checking GitHub remote...
-echo.
-
-"C:\Program Files\Git\cmd\git.exe" remote -v
-
-echo.
-
-REM ============================================================
-REM 4. ADD CHANGES
-REM ============================================================
-
-echo [4/6] Adding project changes...
-echo.
-
-"C:\Program Files\Git\cmd\git.exe" add .
+git pull origin main --rebase --autostash
 
 if errorlevel 1 (
     echo.
-    echo ==========================================
-    echo          ERROR: GIT ADD FAILED
-    echo ==========================================
-    echo.
-    pause
-    exit /b 1
+    echo [!] Rebasing failed. Trying merge...
+    git rebase --abort 2>nul
+    git pull origin main --no-rebase
+    if errorlevel 1 (
+        echo.
+        echo [!] Merge conflict detected. Auto-resolving .dockerignore...
+        git checkout --ours .dockerignore
+        git add .dockerignore
+        git commit -m "Resolved merge conflict in .dockerignore"
+        echo.
+        echo [✓] Conflict resolved.
+    )
 )
 
-echo Changes added successfully.
 echo.
-
-REM ============================================================
-REM 5. COMMIT
-REM ============================================================
-
-echo [5/6] Creating commit...
-echo.
-
-set "commit_message="
-set /p "commit_message=Enter commit message: "
-
-if "%commit_message%"=="" (
-    set "commit_message=GiftAura+ update"
-)
-
-"C:\Program Files\Git\cmd\git.exe" commit -m "%commit_message%"
-
-REM ------------------------------------------------------------
-REM A commit can fail simply because there are no new changes.
-REM We continue because there may still be remote changes to pull.
-REM ------------------------------------------------------------
+echo [2/4] Adding all changes...
+git add .
 
 echo.
+echo [3/4] Committing...
+git commit -m "Auto-update: %date% %time%"
 
-REM ============================================================
-REM 6. SYNC + PUSH
-REM ============================================================
-
-echo [6/6] Syncing with GitHub...
 echo.
-
-"C:\Program Files\Git\cmd\git.exe" pull origin main --rebase
+echo [4/4] Pushing to GitHub...
+git push origin main
 
 if errorlevel 1 (
     echo.
-    echo ==========================================
-    echo        ERROR: GIT PULL / REBASE FAILED
-    echo ==========================================
-    echo.
-    echo There may be a merge conflict.
-    echo.
-    echo Run:
-    echo.
-    echo git status
-    echo.
-    echo Resolve the conflict before running this BAT again.
-    echo.
+    echo [ERROR] Push failed. Try again later.
     pause
     exit /b 1
 )
 
 echo.
-echo GitHub changes synchronized.
-echo.
-
-echo Pushing local changes to GitHub...
-echo.
-
-"C:\Program Files\Git\cmd\git.exe" push origin main
-
-if errorlevel 1 (
-    echo.
-    echo ==========================================
-    echo             PUSH FAILED
-    echo ==========================================
-    echo.
-    echo GitHub rejected the push.
-    echo.
-    echo Check the error above.
-    echo.
-    pause
-    exit /b 1
-)
-
-REM ============================================================
-REM SUCCESS
-REM ============================================================
-
-echo.
-echo.
 echo ==========================================
-echo       GITHUB UPDATE SUCCESSFUL
+echo     ✅ SUCCESS!
 echo ==========================================
 echo.
-echo Project:
-echo GiftAura+
+echo Your code is now on GitHub.
 echo.
-echo Local folder:
-echo D:\Gift
-echo.
-echo GitHub:
-echo https://github.com/nikhilsarojbwr-stack/New_GiftAura
-echo.
-echo ==========================================
-echo.
-echo Your latest GiftAura+ changes are on GitHub.
-echo.
-
 pause
