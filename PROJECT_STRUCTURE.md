@@ -18,30 +18,30 @@ gap
 │   │   └── style.css
 │   ├── images
 │   │   ├── celebrations
-│   │   │   ├── anniversary-gallery1.jpg
-│   │   │   ├── anniversary-gallery2.jpg
-│   │   │   ├── anniversary.jpg
-│   │   │   ├── birthday-gallery1.jpg
-│   │   │   ├── birthday-gallery2.jpg
-│   │   │   ├── birthday-gallery3.jpg
-│   │   │   ├── birthday.jpg
-│   │   │   ├── cafe.jpg
-│   │   │   ├── custom.jpg
-│   │   │   ├── proposal.jpg
-│   │   │   └── romantic.jpg
+│   │   │   ├── anniversary-gallery1.webp
+│   │   │   ├── anniversary-gallery2.webp
+│   │   │   ├── anniversary.webp
+│   │   │   ├── birthday-gallery1.webp
+│   │   │   ├── birthday-gallery2.webp
+│   │   │   ├── birthday-gallery3.webp
+│   │   │   ├── birthday.webp
+│   │   │   ├── cafe.webp
+│   │   │   ├── custom.webp
+│   │   │   ├── proposal.webp
+│   │   │   └── romantic.webp
 │   │   ├── products
 │   │   │   ├── c2210b5eee67419f832f36d05c65cbe4.png
 │   │   │   └── eeab65696fd049be883c7698778d1afa.png
 │   │   ├── .png
 │   │   ├── branch-left.png
-│   │   ├── cta-event-family.jpg
-│   │   ├── hero-event-scene.jpg
+│   │   ├── cta-event-family.webp
+│   │   ├── hero-event-scene.webp
 │   │   ├── nikhil.png
-│   │   ├── timeline-01.jpg
-│   │   ├── timeline-02.jpg
-│   │   ├── timeline-03.jpg
-│   │   ├── timeline-04.jpg
-│   │   ├── timeline-05.jpg
+│   │   ├── timeline-01.webp
+│   │   ├── timeline-02.webp
+│   │   ├── timeline-03.webp
+│   │   ├── timeline-04.webp
+│   │   ├── timeline-05.webp
 │   │   └── vidhi.png
 │   └── js
 ├── templates

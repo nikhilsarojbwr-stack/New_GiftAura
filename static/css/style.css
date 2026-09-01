@@ -762,48 +762,48 @@
 
    Files:
 
-   birthday.jpg
-   anniversary.jpg
-   romantic.jpg
-   proposal.jpg
-   cafe.jpg
-   custom.jpg
+   birthday.webp
+   anniversary.webp
+   romantic.webp
+   proposal.webp
+   cafe.webp
+   custom.webp
 */
 
 
 .section-categories .birthday-visual {
     background-image:
-        url("/static/images/celebrations/birthday.jpg");
+        url("/static/images/celebrations/birthday.webp");
 }
 
 
 .section-categories .anniversary-visual {
     background-image:
-        url("/static/images/celebrations/anniversary.jpg");
+        url("/static/images/celebrations/anniversary.webp");
 }
 
 
 .section-categories .romantic-visual {
     background-image:
-        url("/static/images/celebrations/romantic.jpg");
+        url("/static/images/celebrations/romantic.webp");
 }
 
 
 .section-categories .proposal-visual {
     background-image:
-        url("/static/images/celebrations/proposal.jpg");
+        url("/static/images/celebrations/proposal.webp");
 }
 
 
 .section-categories .cafe-visual {
     background-image:
-        url("/static/images/celebrations/cafe.jpg");
+        url("/static/images/celebrations/cafe.webp");
 }
 
 
 .section-categories .custom-visual {
     background-image:
-        url("/static/images/celebrations/custom.jpg");
+        url("/static/images/celebrations/custom.webp");
 }
 
 
