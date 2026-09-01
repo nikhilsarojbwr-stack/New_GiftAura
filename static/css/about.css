@@ -307,11 +307,11 @@
 
     background: var(--color-primary-green);
 
-    color: var(--color-white);
+    color: var(--color-text-primary);
 
     font-family: var(--font-sans);
 
-    font-size: 10px;
+    font-size: 20px;
 
     font-weight: 600;
 
