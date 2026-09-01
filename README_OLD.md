@@ -1,3 +1,5 @@
+Your polished README is below.
+
 # 🎁 GiftAura+ – Premium Customized Gifts E-Commerce Platform
 
 **GiftAura+** is a modern, fully responsive e-commerce web application for discovering and ordering handcrafted, personalized gifts for every occasion. Built with **FastAPI**, **Jinja2**, and modern frontend technologies, the project demonstrates enterprise-grade component-based architecture, responsive design, and elegant user experience.
@@ -97,6 +99,8 @@ gap/
 │   │   │   ├── proposal.webp
 │   │   │   └── romantic.webp
 │   │   ├── products/                # Product images
+│   │   │   ├── [product-id].png     # Product photos
+│   │   │   └── ...
 │   │   ├── brand-left.png
 │   │   ├── branch-left.png
 │   │   ├── cta-event-family.webp
@@ -107,13 +111,14 @@ gap/
 │
 ├── templates/                       # Jinja2 templates (server-side rendering)
 │   ├── __init__.py                  # Template package marker
+│   ├── base.html                    # NOT HERE - see shared/
 │   │
 │   ├── shared/                      # Shared layout components
 │   │   ├── base.html                # Master template (layout, meta tags)
 │   │   ├── navbar.html              # Navigation bar component
 │   │   └── footer.html              # Footer component
 │   │
-│   ├── components/                  # Reusable UI components (14 files)
+│   ├── components/                  # Reusable UI components
 │   │   ├── hero.html                # Hero section (CTA)
 │   │   ├── best_sellers_section.html# Best sellers product grid
 │   │   ├── product_card.html        # Individual product card template
@@ -312,403 +317,165 @@ For complete list, see [requirements.txt](requirements.txt)
 
 ---
 
-## 🚀 Quick Start Guide
+## 🚀 How to Run
 
 ### Prerequisites
 - Python 3.10+
-- Git
-- pip
+- pip or conda
+- Virtual environment (recommended)
+
+### Quick Start
+
+---
+
+# 📋 Prerequisites
+
+Before running this project, ensure you have the following installed:
+
+* Python **3.10 or newer**
+* Git
+* pip
 
 Verify your installation:
+
 ```bash
 python --version
 git --version
 pip --version
 ```
 
-### Step 1: Clone Repository
+---
+
+# 🚀 Getting Started
+
+## 1. Clone the Repository
+
 ```bash
 git clone https://github.com/nikhilsarojbwr-stack/GiftAura.git
-cd gap
 ```
 
-### Step 2: Create Virtual Environment
+Move into the project directory:
+
 ```bash
-# Windows
+cd GiftAura
+```
+
+---
+
+## 2. Create a Virtual Environment
+
+### Windows
+
+```bash
 python -m venv .venv
 .venv\Scripts\activate
+```
 
-# Linux/macOS
+### Linux / macOS
+
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-### Step 3: Install Dependencies
+---
+
+## 3. Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 4: Run Development Server
+---
+
+## 4. Run the Application
+
 ```bash
 uvicorn main:app --reload
 ```
 
-Output:
-```
+You should see output similar to:
+
+```text
 INFO:     Uvicorn running on http://127.0.0.1:8000
 ```
 
-### Step 5: Access Application
-Open browser → `http://127.0.0.1:8000`
+---
+
+## 5. Open Your Browser
+
+Visit:
+
+```
+http://127.0.0.1:8000
+```
+
+The GiftAura homepage should now be running locally.
 
 ---
 
-## 🔧 Configuration & Customization
+# 🧩 How It Works
 
-### Environment Setup
-Create a `.env` file (optional):
-```
-DEBUG=True
-DATABASE_URL=mongodb://localhost:27017/giftaura
-API_KEY=your_api_key
-```
+GiftAura follows a modular component architecture.
 
-### Customization Guide
+* **FastAPI** handles routing and serves the application.
+* **Jinja2** renders reusable HTML components.
+* **base.html** provides the shared layout.
+* Individual sections (Hero, Categories, FAQ, Testimonials, etc.) are stored inside the `templates/components/` directory.
+* Static assets (CSS, JavaScript, Images) are served from the `static/` directory.
 
-#### 1. **Styling**
-Edit `static/css/style.css` to customize:
-- Color scheme
-- Typography (fonts, sizes)
-- Layout (spacing, dimensions)
-- Responsive breakpoints
-- Component styling
-
-#### 2. **Content**
-Replace placeholder data in:
-- `data/categories.json` – Category definitions
-- `templates/components/testimonials_section.html` – Customer reviews
-- `templates/components/faq.html` – FAQ items
-- `templates/components/best_sellers_section.html` – Featured products
-
-#### 3. **Images**
-Add/replace images in `static/images/`:
-- Product images → `products/` folder
-- Celebration images → `celebrations/` folder
-- Hero/banner images → root `images/` folder
-
-#### 4. **Components**
-Modify any component in `templates/components/` without restarting the server (with `--reload` flag).
-
-#### 5. **Routes**
-Add new routes in `main.py`:
-```python
-@app.get("/new-page", response_class=HTMLResponse)
-async def new_page(request: Request):
-    return templates.TemplateResponse(
-        request=request,
-        name="new-page.html"
-    )
-```
+This architecture keeps templates reusable, maintainable, and easy to extend.
 
 ---
 
-## 📖 Code Walkthrough
+# 🎨 Customization
 
-### Main.py Structure
-```python
-# 1. Import FastAPI and dependencies
-from fastapi import FastAPI, Request
+## Styling
 
-# 2. Initialize FastAPI app
-app = FastAPI(title="GiftAura+")
+Modify:
 
-# 3. Mount static files
-app.mount("/static", StaticFiles(directory="static"), name="static")
-
-# 4. Configure Jinja2 templates
-templates = Jinja2Templates(directory="templates")
-
-# 5. Load data (categories.json)
-CATEGORIES = load_categories()
-
-# 6. Define routes
-@app.get("/")
-async def home(request: Request):
-    return templates.TemplateResponse(...)
-
-@app.get("/category/{slug}")
-async def category_detail(request: Request, slug: str):
-    category = CATEGORIES.get(slug)
-    return templates.TemplateResponse(..., context={...})
+```text
+static/css/style.css
 ```
 
-### Template Rendering
-All templates use Jinja2 syntax:
-```html
-<!-- Extend base layout -->
-{% extends "shared/base.html" %}
+to customize:
 
-<!-- Include components -->
-{% include "components/hero.html" %}
-{% include "components/product_card.html" with context %}
-
-<!-- Loop through data -->
-{% for item in items %}
-  <div>{{ item.name }}</div>
-{% endfor %}
-
-<!-- Conditional rendering -->
-{% if request.url.path == "/" %}
-  <p>Home page only</p>
-{% endif %}
-```
+* Colors
+* Typography
+* Layout
+* Buttons
+* Cards
+* Animations
+* Spacing
 
 ---
 
-## 🐳 Docker Deployment
+## Content
 
-### Build Docker Image
-```bash
-docker build -t giftaura:latest .
-```
+Replace the placeholder content with your own:
 
-### Run Container
-```bash
-docker run -p 8000:8000 giftaura:latest
-```
-
-### Docker Compose (Optional)
-```yaml
-version: '3.8'
-services:
-  web:
-    build: .
-    ports:
-      - "8000:8000"
-    environment:
-      - PYTHONUNBUFFERED=1
-```
+* Products
+* Categories
+* Testimonials
+* FAQ
+* Images
+* Brand Information
 
 ---
 
-## 🌐 Production Deployment
+## Forms
 
-### Using Gunicorn + Uvicorn
-```bash
-pip install gunicorn
-gunicorn -k uvicorn.workers.UvicornWorker main:app --workers 4 --bind 0.0.0.0:8000
-```
+The "Design Your Dream Gift" form can easily be connected to:
 
-### Deployment Platforms
-- **Render**: Automatic deploys from GitHub
-- **Railway**: Easy environment setup
-- **Heroku**: Procfile-based deployment
-- **AWS EC2**: Full control, manual setup
-- **DigitalOcean**: VPS or App Platform
-- **Azure App Service**: Microsoft-native deployment
-- **Vercel**: For edge deployment
-
-### Production Checklist
-- [ ] Set `DEBUG=False`
-- [ ] Use strong `SECRET_KEY`
-- [ ] Enable HTTPS/SSL
-- [ ] Set up database (MongoDB)
-- [ ] Configure CORS if using API
-- [ ] Set up logging and monitoring
-- [ ] Use environment variables for secrets
-- [ ] Optimize image sizes
-- [ ] Enable caching headers
-- [ ] Set up CDN for static assets
+* Database
+* Email Service
+* REST API
+* CRM
+* ERP
 
 ---
 
-## 🔐 Security Considerations
-
-### Environment Variables
-Store sensitive data in `.env`:
-```bash
-# .env
-API_KEY=your_secret_key
-DATABASE_URL=your_db_url
-SECRET_KEY=your_secret_key
-```
-
-Load in code:
-```python
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
-API_KEY = os.getenv("API_KEY")
-```
-
-### CORS Configuration
-```python
-from fastapi.middleware.cors import CORSMiddleware
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["https://yourdomain.com"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-```
-
-### Input Validation
-Use Pydantic for form validation:
-```python
-from pydantic import BaseModel
-
-class ContactForm(BaseModel):
-    name: str
-    email: str
-    message: str
-```
-
----
-
-## 📊 Recent Updates (Latest Session)
-
-### Version 1.0.0+ Changes (2026-09-01)
-
-#### ✨ New Features
-- **Comprehensive README** – Complete project documentation for LLMs
-- **Enhanced Project Structure** – Detailed file organization
-- **API Documentation** – All endpoints documented
-- **Component Mapping** – Clear component hierarchy
-- **Data Flow Diagrams** – Visual request-response flow
-
-#### 🔧 Improvements
-- Modular template system with 14+ reusable components
-- Dynamic category routing with JSON data
-- Responsive CSS framework
-- SEO-friendly structure
-- Mobile-first design approach
-
-#### 📝 Documentation
-- Detailed component breakdown
-- Code walkthrough examples
-- Customization guide
-- Deployment instructions
-- Security best practices
-
----
-
-## 🧪 Testing & Development
-
-### Run with Auto-reload
-```bash
-uvicorn main:app --reload --host 127.0.0.1 --port 8000
-```
-
-### Access API Docs
-- **Swagger UI**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
-
-### Debug Template Issues
-1. Check template syntax in VS Code
-2. Use browser dev tools (F12)
-3. Check console for JavaScript errors
-4. Verify static file paths in Network tab
-
-### Common Issues & Solutions
-
-| Issue | Solution |
-|-------|----------|
-| Static files not loading | Check `app.mount("/static", ...)` in main.py |
-| Template not found | Verify template path in `@app.get()` route |
-| 404 on `/category/{slug}` | Ensure category exists in `categories.json` |
-| CSS not applying | Clear browser cache, check CSS file path |
-| Images not displaying | Verify image exists in `static/images/` |
-
----
-
-## 🎓 Learning Path for New Developers
-
-### Understanding the Project
-1. Read `main.py` – Understand FastAPI basics
-2. Explore `templates/shared/base.html` – Learn template structure
-3. Review `templates/components/` – Understand reusable components
-4. Check `data/categories.json` – See data format
-5. Study `static/css/style.css` – Understand styling approach
-
-### Making Changes
-1. **Small Change**: Modify CSS in `static/css/style.css`
-2. **Content Update**: Edit `data/categories.json` or component HTML
-3. **New Route**: Add `@app.get()` endpoint in `main.py`
-4. **New Component**: Create file in `templates/components/`, include it in page
-5. **Advanced**: Integrate with database, add form handling
-
-### Testing Your Changes
-- Development server reloads automatically with `--reload`
-- Check browser console (F12) for errors
-- Use Swagger UI at `/docs` to test API
-
----
-
-## 📚 Project Dependencies Explained
-
-| Package | Purpose | Version |
-|---------|---------|---------|
-| fastapi | Web framework for routing & API | 0.141.1 |
-| uvicorn | ASGI server for running app | 0.52.0 |
-| jinja2 | Template engine for rendering HTML | 3.1.6 |
-| starlette | HTTP/middleware utilities | 1.3.1 |
-| pydantic | Data validation and settings | 2.13.4 |
-| pymongo | MongoDB driver (optional) | 4.17.0 |
-| python-dotenv | Environment configuration | 1.2.2 |
-| click | CLI utilities | 8.4.2 |
-
----
-
-## 🔄 Git Workflow
-
-### Branch Strategy
-```bash
-# Feature branch
-git checkout -b feature/new-component
-git add .
-git commit -m "Add new component"
-git push origin feature/new-component
-
-# Create Pull Request on GitHub
-# After review, merge to main
-```
-
-### Commit Messages
-```
-[FEATURE] Add testimonials component
-[FIX] Fix responsive layout issue
-[DOCS] Update README with deployment guide
-[STYLE] Format CSS and improve readability
-[REFACTOR] Restructure template organization
-```
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these guidelines:
-
-1. **Fork** the repository
-2. **Create a feature branch**: `git checkout -b feature/your-feature`
-3. **Make your changes** with clear, descriptive commit messages
-4. **Test your changes** locally with `uvicorn main:app --reload`
-5. **Push to your branch**: `git push origin feature/your-feature`
-6. **Open a Pull Request** with a detailed description
-
-### Contribution Areas
-- Bug fixes and performance improvements
-- New components or features
-- Documentation improvements
-- UI/UX enhancements
-- Database integration
-- API endpoints
-
----
-
-## 📦 Deployment
+# 📦 Deployment
 
 Run the production server using:
 
@@ -731,6 +498,33 @@ Example:
 ```bash
 gunicorn -k uvicorn.workers.UvicornWorker main:app
 ```
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository.
+2. Create a new feature branch.
+
+```bash
+git checkout -b feature/my-feature
+```
+
+3. Commit your changes.
+
+```bash
+git commit -m "Add new feature"
+```
+
+4. Push to your branch.
+
+```bash
+git push origin feature/my-feature
+```
+
+5. Open a Pull Request.
 
 ---
 
@@ -757,7 +551,9 @@ Special thanks to everyone who contributes to open-source software.
 
 **Nikhil Saroj**
 
-GitHub: [https://github.com/nikhilsarojbwr-stack](https://github.com/nikhilsarojbwr-stack)
+GitHub:
+
+[https://github.com/nikhilsarojbwr-stack](https://github.com/nikhilsarojbwr-stack)
 
 ---
 
@@ -781,4 +577,192 @@ If you have any questions or suggestions, feel free to open an issue or submit a
 
 ---
 
-## 🌟 GiftAura+ – Making Gift Giving Personal
+## 🌟 GiftAura
+
+> **Every Gift Becomes A Beautiful Memory.**
+
+# 🎁 GiftAura – Premium Customized Gifts
+
+**GiftAura** is a modern, fully responsive e‑commerce website that offers **handcrafted, personalized gifts** for every occasion. The platform allows users to browse best‑selling products, shop by category or occasion, and submit a custom gift request – all within a beautifully designed interface.
+
+---
+
+## ✨ Features
+
+- **Hero Section** – Engaging headline, call‑to‑action buttons, and a trust bar highlighting key benefits.
+- **Best Sellers Carousel** – Showcases top products with “bestseller” badges, wishlist icons, and quick‑view hover actions.
+- **Shop by Category** – Visual grid with overlays for gift categories (For Her, For Him, Couples, etc.).
+- **Shop by Occasion** – Icon‑based cards for Birthday, Anniversary, Valentine’s, Christmas, etc.
+- **Design Your Dream Gift** – A custom order form with fields for name, email, occasion, delivery date, and file upload.
+- **Why Choose Us** – Feature grid highlighting core values (handmade, personalised, free shipping, 24/7 support).
+- **Customer Testimonials** – Scrollable cards with real reviews and star ratings.
+- **FAQ Accordion** – Clean, two‑column list of frequently asked questions.
+- **Responsive Navigation** – Sticky header with search bar, wishlist, cart badge, and mobile hamburger menu.
+- **Footer** – Brand info, quick links, customer service, newsletter signup, and social icons.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Backend**: [FastAPI](https://fastapi.tiangolo.com/) (Python)
+- **Frontend**: HTML5, CSS3 (custom), JavaScript (vanilla)
+- **Templating**: [Jinja2](https://jinja.palletsprojects.com/)
+- **Fonts**: Google Fonts (Playfair Display, Poppins, Great Vibes)
+- **Icons**: Embedded SVG & Unicode symbols
+
+---
+
+## 📁 Project Structure
+
+```
+gap/
+├── static/
+│   ├── css/
+│   │   └── style.css          # All global styles
+│   ├── images/                # (optional) product/avatar images
+│   └── js/                    # (optional) external JavaScript
+├── templates/
+│   ├── about/
+│   │   └── about.html
+│   ├── auth/
+│   │   ├── login.html
+│   │   └── register.html
+│   ├── components/
+│   │   ├── best_sellers_section.html
+│   │   ├── breadcrumb.html
+│   │   ├── category_card.html
+│   │   ├── category_section.html
+│   │   ├── dream_gift_form.html
+│   │   ├── faq.html
+│   │   ├── feature_card.html
+│   │   ├── hero.html
+│   │   ├── newsletter.html
+│   │   ├── occasion_card.html
+│   │   ├── occasion_section.html
+│   │   ├── pagination.html
+│   │   ├── product_card.html
+│   │   ├── search_bar.html
+│   │   ├── testimonial_card.html
+│   │   ├── testimonials_section.html
+│   │   ├── trust_bar.html
+│   │   └── why_choose.html
+│   ├── contact/
+│   │   └── contact.html
+│   ├── home/
+│   │   └── index.html         # Homepage (includes all sections)
+│   ├── product/
+│   │   └── product_details.html
+│   ├── shared/
+│   │   ├── base.html          # Main layout with navbar, footer, scripts
+│   │   ├── footer.html
+│   │   └── navbar.html
+│   └── shop/
+│       └── shop.html
+├── .gitignore
+├── main.py                     # FastAPI application entry point
+├── requirements.txt
+├── README.md
+└── PROJECT_STRUCTURE.md
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone(https://github.com/nikhilsarojbwr-stack/GiftAura)
+cd gap
+```
+
+### 2. Create a virtual environment (recommended)
+
+```bash
+python -m venv venv
+source venv/bin/activate      # On Windows: venv\Scripts\activate
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the FastAPI server
+
+```bash
+uvicorn main:app --reload
+```
+
+### 5. Open your browser
+
+Visit [http://localhost:8000](http://localhost:8000) – you should see the GiftAura homepage.
+
+---
+
+## 🧩 How It Works
+
+- **Templates** are rendered using **Jinja2** with a modular component approach.
+- Each section (Hero, Best Sellers, Categories, etc.) lives in its own file under `templates/components/`.
+- The `base.html` provides the common layout (navbar, footer, styles, scripts).
+- All static assets (CSS, images, JS) are served from the `/static` folder.
+- The homepage (`index.html`) simply includes all section components – making it clean and easy to maintain.
+
+---
+
+## 🧪 Customisation
+
+- **Styles**: All CSS variables are defined in `static/css/style.css` – you can easily change colours, fonts, spacing, etc.
+- **Content**: Replace static product cards, category items, testimonials, and FAQ entries with your own data (or connect to a database).
+- **Forms**: The “Design Your Dream Gift” form currently shows an alert on submit; you can connect it to an email endpoint or a database.
+
+---
+
+## 📦 Deployment
+
+For production deployment:
+
+```bash
+uvicorn main:app --host 0.0.0.0 --port 8000
+```
+
+<img width="1193" height="921" alt="image" src="https://github.com/user-attachments/assets/1d2140f5-8a63-4cc4-9b40-6edb7fb06269" />
+
+<img width="1196" height="784" alt="image" src="https://github.com/user-attachments/assets/6832d3f6-9ba8-40d5-8a2e-920249cf5c89" />
+
+<img width="1188" height="959" alt="image" src="https://github.com/user-attachments/assets/6b841e22-07a6-474b-a8bc-e44b0eb5dfab" />
+
+<img width="1191" height="935" alt="image" src="https://github.com/user-attachments/assets/41d9eb81-bd25-4bb9-8034-e99a08bdcca3" />
+
+<img width="1192" height="797" alt="image" src="https://github.com/user-attachments/assets/c4717e53-cb50-4a4c-bc32-3b3ad6dc4e59" />
+
+<img width="1204" height="973" alt="image" src="https://github.com/user-attachments/assets/cd4e1fcc-3f56-4201-9832-80f103063917" />
+
+
+Consider using `gunicorn` with `uvicorn.workers.UvicornWorker` for better concurrency, or deploy on platforms like **Render**, **Heroku**, or **AWS**.
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!  
+Feel free to fork the repo and submit a pull request.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙌 Acknowledgments
+
+- Built with ❤️ using FastAPI and Jinja2.
+- Design inspired by modern gift‑shop aesthetics.
+- Special thanks to all the open‑source libraries that made this possible.
+
+---
+
+**GiftAura** – *Every Gift Becomes A Beautiful Memory* ✦
