@@ -4,53 +4,91 @@
 
 {% block content %}
 
-<!-- =========================================================
-     GIFTAURA — ABOUT PAGE
-     Designed to closely reproduce the supplied reference image.
-     ========================================================= -->
-
-<section class="ga-about-hero">
-    <div class="ga-hero-copy">
-        <span class="ga-kicker">✦ OUR STORY ✦</span>
-        <h1>We Turn Your<br>Feelings Into<br>Something They<br>Can Hold.</h1>
-
-        <div class="ga-divider">♥</div>
-
-        <p class="ga-lead">
-            GiftAura is a premium personalized gifting brand created to make
-            meaningful moments more personal, memorable and beautifully unforgettable.
-        </p>
-
-        <p>
-            We create personalized gifts using thoughtful designs, meaningful
-            memories, quality materials and beautiful presentation.
-        </p>
-
-        <p class="ga-script">Made With Love, Crafted For You.</p>
-
-        <a href="/categories" class="ga-btn">Explore Our Gifts&nbsp; →</a>
-    </div>
-
-    <div class="ga-hero-visual">
-        <img src="/static/images/hero-gift-scene.jpg" alt="GiftAura personalized gift collection">
+<!-- ===== ABOUT HERO ===== -->
+<section class="about-hero">
+    <div class="container">
+        <div class="about-hero-content">
+            <span class="about-eyebrow">✦ OUR STORY ✦</span>
+            <h1>Every Gift Tells a Story</h1>
+            <p>We believe the best gifts and celebrations are the ones that carry a piece of your heart. GiftAura was born from a simple idea: to turn ordinary moments into unforgettable memories — with custom decorations, personalized gifts, and a deep love for what we do.</p>
+            <a href="/contact" class="btn-primary">Get in Touch →</a>
+        </div>
     </div>
 </section>
 
-
-<section class="ga-people">
-    <div class="ga-section-head">
-        <h2>The People Behind GiftAura</h2>
-        <p>Every meaningful brand begins with a story.</p>
-    </div>
-
-    <div class="ga-people-grid">
-        <article class="ga-person ga-person-left">
-            <div class="ga-person-photo">
-                <img src="/static/images/vidhi.png" alt="Vidhi Bagde">
+<!-- ===== MISSION SECTION ===== -->
+<section class="about-mission">
+    <div class="container">
+        <div class="mission-grid">
+            <div class="mission-text">
+                <span>✦ OUR MISSION ✦</span>
+                <h2>Creating Memories, One Celebration at a Time</h2>
+                <p>We bring your vision to life with creativity, precision, and a deep love for what we do. From intimate gatherings to grand celebrations, every detail is designed to leave a lasting impression — beautifully, thoughtfully, and within your budget.</p>
+                <ul class="mission-list">
+                    <li><span>✓</span> Personalised service for every client</li>
+                    <li><span>✓</span> Premium quality materials & decor</li>
+                    <li><span>✓</span> On‑time execution, every time</li>
+                    <li><span>✓</span> Custom celebrations without the unnecessary cost</li>
+                </ul>
             </div>
+            <div class="mission-image">
+                <img src="/static/images/about-mission.jpg" alt="GiftAura team setting up decor">
+            </div>
+        </div>
+    </div>
+</section>
 
-            <div class="ga-person-copy">
-                <h3>Vidhi Bagde</h3>
+<!-- ===== VALUES SECTION ===== -->
+<section class="about-values">
+    <div class="container">
+        <div class="section-heading">
+            <span>✦ WHAT WE STAND FOR ✦</span>
+            <h2>Our Core Values</h2>
+            <p>These principles guide everything we do – from the first consultation to the final reveal.</p>
+        </div>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">❤️</div>
+                <h3>Warm & Personal</h3>
+                <p>Every client is unique, and every celebration deserves a personal touch. We listen, understand, and create with heart.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🎨</div>
+                <h3>Creative & Elegant</h3>
+                <p>We bring fresh ideas to every project, blending elegance with creativity to make your celebration truly stand out.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">💰</div>
+                <h3>Budget-Friendly</h3>
+                <p>Beautiful celebrations don’t have to be expensive. We work within your budget without compromising on quality or experience.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🤝</div>
+                <h3>Trustworthy & Reliable</h3>
+                <p>Honest pricing, clear communication, and on‑time delivery – because your trust is the foundation of our work.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOUNDER & CO-FOUNDER SECTION ===== -->
+<section class="about-team">
+    <div class="container">
+        <div class="section-heading">
+            <span>✦ THE TEAM ✦</span>
+            <h2>Meet the Founders</h2>
+            <p>Passionate creators dedicated to making your celebrations extraordinary.</p>
+        </div>
+
+        <div class="team-grid">
+            <!-- Vidhi Bagde -->
+            <div class="team-member founder-card">
+                <div class="team-avatar">
+                    <img src="/static/images/vidhi.png" 
+                         alt="Vidhi Bagde – Co-Founder of GiftAura">
+                </div>
+                <h4>Vidhi Bagde</h4>
                 <span>Co-Founder, GiftAura</span>
                 <p>
                     What started as a simple love for meaningful gifting became a vision
@@ -64,15 +102,14 @@
                     sometimes cannot.”
                 </blockquote>
             </div>
-        </article>
 
-        <article class="ga-person ga-person-right">
-            <div class="ga-person-photo">
-                <img src="/static/images/nikhil.png" alt="Nikhil Saroj">
-            </div>
-
-            <div class="ga-person-copy">
-                <h3>Nikhil Saroj</h3>
+            <!-- Nikhil Saroj -->
+            <div class="team-member cofounder-card">
+                <div class="team-avatar">
+                    <img src="/static/images/nikhil.png" 
+                         alt="Nikhil Saroj – Co-Founder of GiftAura">
+                </div>
+                <h4>Nikhil Saroj</h4>
                 <span>Co-Founder, GiftAura</span>
                 <p>
                     I wanted personalization and premium presentation to become a
@@ -86,211 +123,20 @@
                     special.”
                 </blockquote>
             </div>
-        </article>
-    </div>
-</section>
-
-
-<section class="ga-timeline">
-    <div class="ga-section-head">
-        <h2>From An Idea To GiftAura</h2>
-        <p>A simple idea, shaped by meaningful moments.</p>
-    </div>
-
-    <div class="ga-timeline-wrap">
-        <div class="ga-timeline-line"></div>
-
-        <div class="ga-timeline-item">
-            <div class="ga-circle">
-                <img src="/static/images/timeline-01.jpg" alt="">
-            </div>
-            <div class="ga-number">01</div>
-            <h3>THE IDEA</h3>
-            <p>
-                A simple belief that ordinary gifts can become extraordinary
-                when they are personal.
-            </p>
-        </div>
-
-        <div class="ga-timeline-item">
-            <div class="ga-circle">
-                <img src="/static/images/timeline-02.jpg" alt="">
-            </div>
-            <div class="ga-number">02</div>
-            <h3>THE FIRST GIFT</h3>
-            <p>
-                The beginning of turning memories, names and emotions into
-                personalized creations.
-            </p>
-        </div>
-
-        <div class="ga-timeline-item">
-            <div class="ga-circle">
-                <img src="/static/images/timeline-03.jpg" alt="">
-            </div>
-            <div class="ga-number">03</div>
-            <h3>THE FIRST CUSTOMER</h3>
-            <p>
-                The moment the idea became something real for someone else's
-                special occasion.
-            </p>
-        </div>
-
-        <div class="ga-timeline-item">
-            <div class="ga-circle">
-                <img src="/static/images/timeline-04.jpg" alt="">
-            </div>
-            <div class="ga-number">04</div>
-            <h3>GROWING TOGETHER</h3>
-            <p>
-                More customers, more stories and more meaningful moments.
-            </p>
-        </div>
-
-        <div class="ga-timeline-item">
-            <div class="ga-circle">
-                <img src="/static/images/timeline-05.jpg" alt="">
-            </div>
-            <div class="ga-number">05</div>
-            <h3>GIFTAURA TODAY</h3>
-            <p>
-                A growing gifting brand dedicated to making every celebration
-                more personal.
-            </p>
         </div>
     </div>
 </section>
 
-
-<section class="ga-beliefs">
-    <img class="ga-branch ga-branch-left" src="/static/images/branch-left.png" alt="">
-    <img class="ga-branch ga-branch-right" src="/static/images/branch-right.png" alt="">
-
-    <div class="ga-section-head ga-light-head">
-        <h2>What We Believe In</h2>
-    </div>
-
-    <div class="ga-belief-grid">
-        <article class="ga-belief">
-            <div class="ga-belief-icon">◉</div>
-            <div>
-                <span>OUR VISION</span>
-                <p>
-                    To make every meaningful moment more personal,
-                    memorable and beautifully unforgettable.
-                </p>
-            </div>
-        </article>
-
-        <article class="ga-belief">
-            <div class="ga-belief-icon">◎</div>
-            <div>
-                <span>OUR MISSION</span>
-                <p>
-                    To create thoughtful personalized gifts that transform emotions,
-                    memories and relationships into something people can cherish.
-                </p>
-            </div>
-        </article>
-    </div>
-</section>
-
-
-<section class="ga-trust">
-    <div class="ga-section-head">
-        <h2>Why Customers Trust GiftAura</h2>
-        <p>Because meaningful gifts deserve thoughtful care at every step.</p>
-    </div>
-
-    <div class="ga-trust-grid">
-        <div class="ga-trust-card">
-            <div class="ga-line-icon">♡</div>
-            <h3>MADE WITH CARE</h3>
-            <p>Every gift is thoughtfully crafted and checked before it reaches you.</p>
-        </div>
-        <div class="ga-trust-card">
-            <div class="ga-line-icon">✎</div>
-            <h3>TRULY PERSONALIZED</h3>
-            <p>Your memories, names and messages become part of the gift.</p>
-        </div>
-        <div class="ga-trust-card">
-            <div class="ga-line-icon">◇</div>
-            <h3>PREMIUM QUALITY</h3>
-            <p>We focus on materials, finishing and presentation.</p>
-        </div>
-        <div class="ga-trust-card">
-            <div class="ga-line-icon">▣</div>
-            <h3>RELIABLE SERVICE</h3>
-            <p>From order to delivery, every detail is handled with care.</p>
-        </div>
-        <div class="ga-trust-card">
-            <div class="ga-line-icon">🎁</div>
-            <h3>BEAUTIFULLY PACKAGED</h3>
-            <p>Every gift arrives ready to create a memorable moment.</p>
-        </div>
-        <div class="ga-trust-card">
-            <div class="ga-line-icon">◡</div>
-            <h3>CUSTOMER FIRST</h3>
-            <p>We are here to help you choose, personalize and create the right gift.</p>
+<!-- ===== FINAL CTA ===== -->
+<section class="about-cta">
+    <div class="container">
+        <div class="cta-box">
+            <span>✦ READY TO CREATE ✦</span>
+            <h2>Let’s Make Your Next Celebration Unforgettable</h2>
+            <p>Tell us about your vision – your occasion, your ideas, your budget. We’ll turn it into a beautiful experience you’ll remember forever.</p>
+            <a href="/contact" class="btn-primary">Start Planning →</a>
         </div>
     </div>
-</section>
-
-
-<section class="ga-stories">
-    <div class="ga-section-head">
-        <h2>Every Gift Has a Story.</h2>
-        <p>And we're grateful to be part of so many of them.</p>
-    </div>
-
-    <div class="ga-story-row">
-        <article class="ga-story-card">
-            <div class="ga-stars">★★★★★</div>
-            <p>I wanted something personal for my sister's birthday, and GiftAura turned one simple memory into something she absolutely loved.</p>
-            <strong>Neha Sharma</strong>
-            <span>Mumbai</span>
-        </article>
-
-        <article class="ga-story-card">
-            <div class="ga-stars">★★★★★</div>
-            <p>The personalization made the gift feel truly ours. The packaging was beautiful and the whole experience felt special.</p>
-            <strong>Rohit Verma</strong>
-            <span>Delhi</span>
-        </article>
-
-        <article class="ga-story-card">
-            <div class="ga-stars">★★★★★</div>
-            <p>GiftAura helped me create the most meaningful anniversary gift for my wife. She was in tears!</p>
-            <strong>Amit Patel</strong>
-            <span>Ahmedabad</span>
-        </article>
-
-        <article class="ga-story-card">
-            <div class="ga-stars">★★★★★</div>
-            <p>Truly unique gifts. You can feel the love and care in every little detail.</p>
-            <strong>Pooja Iyer</strong>
-            <span>Bangalore</span>
-        </article>
-    </div>
-</section>
-
-
-<section class="ga-cta-band">
-    <div class="ga-cta-copy">
-        <h2>Your Story Could Be<br>Our Next Gift.</h2>
-        <p>Tell us the moment you want to make unforgettable.</p>
-        <a href="/contact" class="ga-btn ga-btn-gold">Create Your Gift&nbsp; →</a>
-    </div>
-
-    <div class="ga-cta-image">
-        <img src="/static/images/cta-family.jpg" alt="Family opening a GiftAura present">
-    </div>
-</section>
-
-
-<section class="ga-final-line">
-    <h2>Every Gift Becomes A Beautiful Memory.</h2>
-    <p><span>— GiftAura —</span> Made With Love, Crafted For You.</p>
 </section>
 
 {% endblock %}
