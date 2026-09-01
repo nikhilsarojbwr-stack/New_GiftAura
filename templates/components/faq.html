@@ -1,37 +1,125 @@
-<section class="section-faq">
-    <div class="section-header">
-        <div></div>
-        <div class="title-group">
-            <h2>Frequently Asked Questions</h2>
-            <span class="decor-line"></span>
-        </div>
-        <div></div>
-    </div>
+{% extends 'shared/base.html' %}
 
-    <div class="faq-grid">
-        <div class="faq-item">
-            <span class="q">How long does customization take?</span>
-            <span class="plus">+</span>
-        </div>
-        <div class="faq-item">
-            <span class="q">Do you ship internationally?</span>
-            <span class="plus">+</span>
-        </div>
-        <div class="faq-item">
-            <span class="q">Can I return a custom gift?</span>
-            <span class="plus">+</span>
-        </div>
-        <div class="faq-item">
-            <span class="q">What payment methods do you accept?</span>
-            <span class="plus">+</span>
-        </div>
-        <div class="faq-item">
-            <span class="q">How do I track my order?</span>
-            <span class="plus">+</span>
-        </div>
-        <div class="faq-item">
-            <span class="q">Do you offer corporate gifting?</span>
-            <span class="plus">+</span>
+{% block title %}Frequently Asked Questions — GiftAura{% endblock %}
+
+{% block content %}
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="category-breadcrumb">
+    <div class="container">
+        <a href="/">Home</a><span>›</span><span>FAQ</span>
+    </div>
+</div>
+
+<!-- ===== FAQ HERO ===== -->
+<section class="about-hero" style="min-height: 250px; padding: 60px 0;">
+    <div class="container">
+        <div class="about-hero-content">
+            <span class="about-eyebrow">✦ GOT QUESTIONS? ✦</span>
+            <h1 style="font-size: clamp(36px, 4vw, 48px);">Frequently Asked Questions</h1>
+            <p>Everything you need to know before booking with GiftAura.</p>
         </div>
     </div>
 </section>
+
+<!-- ===== FAQ SECTION ===== -->
+<section class="section-faq" style="padding: 60px 0 80px; background: var(--color-body-bg);">
+    <div class="container">
+        <div class="section-header">
+            <div></div>
+            <div class="title-group">
+                <h2>Frequently Asked Questions</h2>
+                <span class="decor-line"></span>
+            </div>
+            <div></div>
+        </div>
+
+        <div class="faq-grid">
+            <!-- FAQ 1 -->
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <span class="q">How long does customization take?</span>
+                <span class="plus">+</span>
+                <div class="faq-answer" style="display: none;">
+                    <p>We recommend at least 2 weeks in advance for fully custom decorations and gifts. However, we can accommodate last‑minute requests depending on the complexity – just reach out and we’ll try our best!</p>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <span class="q">Do you ship internationally?</span>
+                <span class="plus">+</span>
+                <div class="faq-answer" style="display: none;">
+                    <p>Currently, GiftAura operates in Navi Mumbai and surrounding areas. For deliveries outside India, we can arrange shipping on a case‑by‑case basis – please contact us for a custom quote.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <span class="q">Can I return a custom gift?</span>
+                <span class="plus">+</span>
+                <div class="faq-answer" style="display: none;">
+                    <p>Because every gift is made to order, we don't offer returns on custom items. However, if there's an issue with quality or craftsmanship, we’ll work with you to make it right – your satisfaction is our priority.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <span class="q">What payment methods do you accept?</span>
+                <span class="plus">+</span>
+                <div class="faq-answer" style="display: none;">
+                    <p>We accept UPI, Google Pay, PhonePe, Paytm, credit/debit cards, and bank transfers. We’ll send you a secure payment link after confirming your order.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <span class="q">How do I track my order?</span>
+                <span class="plus">+</span>
+                <div class="faq-answer" style="display: none;">
+                    <p>Once your order is confirmed, we’ll share regular updates via WhatsApp or email. For deliveries, we’ll provide tracking details and a delivery window so you know exactly when to expect us.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <span class="q">Do you offer corporate gifting?</span>
+                <span class="plus">+</span>
+                <div class="faq-answer" style="display: none;">
+                    <p>Absolutely! We specialise in corporate gifting – from custom hampers to branded gifts for employees, clients, and events. Reach out to us and we’ll design a package that fits your needs and budget.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ===== FAQ TOGGLE SCRIPT ===== -->
+<script>
+function toggleFaq(element) {
+    const plus = element.querySelector('.plus');
+    const answer = element.querySelector('.faq-answer');
+    const isOpen = element.classList.contains('active');
+
+    // Close other open FAQs (only one open at a time)
+    document.querySelectorAll('.faq-item.active').forEach(el => {
+        if (el !== element) {
+            el.classList.remove('active');
+            el.querySelector('.plus').textContent = '+';
+            el.querySelector('.faq-answer').style.display = 'none';
+        }
+    });
+
+    if (!isOpen) {
+        element.classList.add('active');
+        plus.textContent = '−';
+        answer.style.display = 'block';
+    } else {
+        element.classList.remove('active');
+        plus.textContent = '+';
+        answer.style.display = 'none';
+    }
+}
+</script>
+
+{% endblock %}
