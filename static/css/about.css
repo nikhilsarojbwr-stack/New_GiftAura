@@ -1,42 +1,44 @@
 /* ============================================================
-   GIFTAURA — ABOUT PAGE
-   Premium Event Planning / Celebration Design
-   Responsive: Desktop + Laptop + Tablet + Mobile
+   GIFTAURA — ABOUT / EVENT PLANNING PAGE
+   Premium editorial design
+   Cream + Deep Green + Antique Gold
 ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather:wght@400;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 
 /* ============================================================
-   ROOT
+   VARIABLES
 ============================================================ */
+
 :root {
-            --color-primary-dark: #11231A;
-            --color-primary-gold: #C19B54;
-            --color-primary-gold-dark: #A8813C;
-            --color-body-bg: #FBF9F4;
-            --color-card-bg-occasion: #FEF2F2;
-            --color-text-primary: #222222;
-            --color-text-secondary: #666666;
-            --color-white: #FFFFFF;
-            --color-border-light: #EAEAEA;
-            --color-input-bg: #F9F9F9;
-            --color-footer-bg: #0A1410;
+    --ga-cream: #f7f3e9;
+    --ga-paper: #fffdf7;
+    --ga-white: #ffffff;
 
-            --font-serif: 'Playfair Display', 'Merriweather', serif;
-            --font-sans: 'Poppins', 'Montserrat', sans-serif;
-            --font-script: 'Great Vibes', 'Dancing Script', cursive;
+    --ga-green: var(--color-primary-dark);
+    --ga-green-dark: var(--color-footer-bg);
+    --ga-green-soft: var(--color-primary-dark);
 
-            --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.05);
-            --shadow-drop: 0 10px 10px rgba(0, 0, 0, 0.10);
+    --ga-gold: #c58b35;
+    --ga-gold-light: #d9b16a;
 
-            --radius-card: 8px;
-            --radius-btn: 30px;
-            --radius-category: 20px;
-            --radius-form: 6px;
-            --radius-occasion: 12px;
+    --ga-text: #172923;
+    --ga-muted: #626863;
 
-            --section-spacing: 80px 5%;
-            --nav-padding: 15px 5%;
-        }
+    --ga-border: #e2d7c4;
+    --ga-shadow: rgba(30, 27, 19, .09);
+
+    --font-serif: 'Playfair Display', 'Merriweather', serif;
+    --font-sans: 'Poppins', 'Montserrat', sans-serif;
+    --font-script: 'Great Vibes', 'Dancing Script', cursive;
+}
+
+
+/* ============================================================
+   GLOBAL
+============================================================ */
+
 .ga-about-hero,
 .ga-people,
 .ga-timeline,
@@ -62,23 +64,19 @@
 
 
 /* ============================================================
-   SHARED TYPOGRAPHY
+   TYPOGRAPHY
 ============================================================ */
 
 .ga-kicker {
     display: block;
 
-    margin: 0;
+    color: var(--ga-gold);
 
-    color: var(--color-primary-gold);
 
-    font-family: var(--font-sans);
+    font-family: 'Montserrat', Arial, sans-serif;
 
     font-size: 10px;
-
-    font-weight: 600;
-
-    line-height: 1.4;
+    font-weight: 700;
 
     letter-spacing: 2px;
 
@@ -451,78 +449,73 @@
 }
 
 
+
 /* ============================================================
-   COMMON SECTION HEADER
+   COMMON SECTION HEAD
 ============================================================ */
 
 .ga-section-head {
 
-    width: 100%;
+    text-align: center;
 
     max-width: 850px;
 
     margin:
         0
         auto
-        25px;
-
-    text-align: center;
+        23px;
 }
 
 
 .ga-section-head h2 {
 
-    margin:
-        7px
-        0
-        0;
+    margin: 6px 0 0;
 
-    color: var(--color-text-primary);
+    color: var(--ga-text);
 
-    font-family: var(--font-serif);
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
 
     font-size:
-        clamp(30px, 3.2vw, 44px);
+        clamp(30px, 3vw, 43px);
 
-    font-weight: 600;
+    font-weight: 500;
 
-    line-height: 1.08;
-
-    letter-spacing: -.4px;
+    line-height: 1;
 }
 
 
 .ga-section-head p {
 
-    margin:
-        7px
-        0
-        0;
+    margin: 7px 0 0;
 
-    color: var(--color-text-secondary);
+    color: #686e69;
 
-    font-family: var(--font-sans);
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
 
-    font-size: 10px;
+    font-size: 9px;
 
-    font-weight: 400;
-
-    line-height: 1.55;
+    line-height: 1.5;
 }
 
 
 /* ============================================================
-   PEOPLE / FOUNDERS
+   FOUNDERS
 ============================================================ */
 
 .ga-people {
 
     padding:
-        30px
+        26px
         5%
-        38px;
+        34px;
 
-    background: var(--color-bg-primary);
+    background: var(--ga-cream);
 
     border-top:
         1px solid
@@ -532,8 +525,6 @@
 
 .ga-people-grid {
 
-    width: 100%;
-
     max-width: 1160px;
 
     margin: 0 auto;
@@ -541,23 +532,20 @@
     display: grid;
 
     grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+        repeat(2, 1fr);
 
-    gap: clamp(25px, 4vw, 55px);
+    gap: 35px;
 }
 
 
 .ga-person {
 
-    min-width: 0;
-
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1fr);
+        1fr 1fr;
 
-    gap: 17px;
+    gap: 16px;
 
     align-items: center;
 }
@@ -565,26 +553,23 @@
 
 .ga-person-photo {
 
-    width: 100%;
-
     height: 300px;
 
     overflow: hidden;
 
-    border-radius: 7px;
+    border-radius: 6px;
 
     background: #ddd;
 
     box-shadow:
-        0 10px 28px
-        rgba(30,27,19,.08);
+        0 10px 30px
+        var(--ga-shadow);
 }
 
 
 .ga-person-photo img {
 
     width: 100%;
-
     height: 100%;
 
     display: block;
@@ -595,29 +580,22 @@
 }
 
 
-.ga-person-copy {
-
-    min-width: 0;
-}
-
-
 .ga-person-copy h3 {
 
-    margin:
-        0
-        0
-        4px;
+    margin: 0 0 3px;
 
-    color: var(--color-text-primary);
+    color: var(--ga-text);
 
-    font-family: var(--font-serif);
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
 
-    font-size:
-        clamp(22px, 2vw, 27px);
+    font-size: 25px;
 
     font-weight: 600;
 
-    line-height: 1.15;
+    line-height: 1;
 }
 
 
@@ -627,15 +605,16 @@
 
     margin-bottom: 14px;
 
-    color: var(--color-primary-gold);
-
+    color: var(--ga-gold);
     font-family: var(--font-sans);
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
 
-    font-size: 11px;
+    font-size: 9px;
 
-    font-weight: 500;
-
-    line-height: 1.4;
+    font-weight: 600;
 }
 
 
@@ -643,15 +622,16 @@
 
     margin: 0;
 
-    color: var(--color-text-secondary);
+    color: #505954;
 
-    font-family: var(--font-sans);
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
 
-    font-size: 13px;
+    font-size: 9px;
 
-    font-weight: 400;
-
-    line-height: 1.65;
+    line-height: 1.7;
 }
 
 
@@ -659,25 +639,22 @@
 
     position: relative;
 
-    margin:
-        17px
-        0
-        0;
+    margin: 15px 0 0;
 
     padding-left: 14px;
 
-    color: var(--color-primary-gold);
+    color: var(--ga-gold);
 
-    font-family: var(--font-script);
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
 
-    font-size:
-        clamp(17px, 1.4vw, 20px);
+    font-size: 14px;
 
-    font-weight: 400;
+    font-style: italic;
 
-    font-style: normal;
-
-    line-height: 1.35;
+    line-height: 1.25;
 }
 
 
@@ -688,14 +665,11 @@
     position: absolute;
 
     left: -3px;
-
-    top: -12px;
-
-    color: var(--color-primary-gold);
-
-    font-family: var(--font-serif);
+    top: -10px;
 
     font-size: 34px;
+
+    color: var(--ga-gold);
 }
 
 
@@ -706,23 +680,21 @@
 .ga-timeline {
 
     padding:
-        28px
+        25px
         4%
-        35px;
+        32px;
 
-    background: var(--color-bg-secondary);
+    background: var(--ga-paper);
 
     border-top:
         1px solid
-        rgba(164,139,92,.2);
+        rgba(164,139,92,.22);
 }
 
 
 .ga-timeline-wrap {
 
     position: relative;
-
-    width: 100%;
 
     max-width: 1170px;
 
@@ -731,9 +703,9 @@
     display: grid;
 
     grid-template-columns:
-        repeat(5, minmax(0, 1fr));
+        repeat(5, 1fr);
 
-    gap: 14px;
+    gap: 16px;
 }
 
 
@@ -741,17 +713,15 @@
 
     position: absolute;
 
-    top: 43px;
+    top: 46px;
 
     left: 9%;
-
     right: 9%;
 
     height: 1px;
 
-    background: var(--color-primary-gold);
-
-    opacity: .65;
+    background:
+        var(--ga-gold-light);
 
     z-index: 0;
 }
@@ -763,8 +733,6 @@
 
     z-index: 1;
 
-    min-width: 0;
-
     text-align: center;
 }
 
@@ -772,7 +740,6 @@
 .ga-circle {
 
     width: 86px;
-
     height: 86px;
 
     margin: 0 auto;
@@ -781,11 +748,11 @@
 
     border:
         1px solid
-        var(--color-primary-gold);
+        var(--ga-gold);
 
     border-radius: 50%;
 
-    background: var(--color-bg-secondary);
+    background: var(--ga-paper);
 
     overflow: hidden;
 }
@@ -794,7 +761,6 @@
 .ga-circle img {
 
     width: 100%;
-
     height: 100%;
 
     display: block;
@@ -810,7 +776,6 @@
     position: relative;
 
     width: 28px;
-
     height: 28px;
 
     margin:
@@ -824,54 +789,59 @@
 
     border:
         1px solid
-        var(--color-primary-gold);
+        var(--ga-gold);
 
     border-radius: 50%;
 
-    background: var(--color-bg-secondary);
+    background:
+        var(--ga-paper);
 
-    color: var(--color-text-primary);
+    color: var(--ga-text);
 
-    font-family: var(--font-sans);
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
 
     font-size: 9px;
 
-    font-weight: 600;
+    font-weight: 700;
 }
 
 
 .ga-timeline-item h3 {
 
-    margin:
-        0
-        0
-        7px;
+    margin: 0 0 7px;
 
-    color: var(--color-text-primary);
+    color: var(--ga-text);
 
-    font-family: var(--font-sans);
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
 
-    font-size: 9px;
+    font-size: 8.5px;
 
     font-weight: 700;
-
-    line-height: 1.35;
 }
 
 
 .ga-timeline-item p {
 
-    max-width: 175px;
+    max-width: 170px;
 
     margin: 0 auto;
 
-    color: var(--color-text-secondary);
+    color: #656c67;
 
-    font-family: var(--font-sans);
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
 
-    font-size: 8.5px;
+    font-size: 8px;
 
-    line-height: 1.6;
+    line-height: 1.65;
 }
 
 
@@ -890,12 +860,11 @@
         5%
         29px;
 
-        background:
+    background:
         linear-gradient(
-            90deg,
-            #002d26 0%,
-            rgba(0,45,38,.96) 68%,
-            rgba(0,45,38,.55) 100%
+            110deg,
+            var(--ga-green-dark),
+            var(--ga-green)
         );
 }
 
@@ -1051,61 +1020,22 @@
 }
 
 
-
 /* ============================================================
-   BOTANICAL BRANCHES
-============================================================ */
-
-.ga-branch {
-
-    position: absolute;
-
-    width: 125px;
-
-    opacity: .48;
-
-    pointer-events: none;
-
-    user-select: none;
-}
-
-
-.ga-branch-left {
-
-    left: -10px;
-
-    bottom: -8px;
-}
-
-
-.ga-branch-right {
-
-    right: -10px;
-
-    top: 15px;
-
-    transform: scaleX(-1);
-}
-
-
-/* ============================================================
-   TRUST
+   WHY GIFTAURA
 ============================================================ */
 
 .ga-trust {
 
     padding:
-        30px
+        26px
         3.5%
-        34px;
+        30px;
 
-    background: var(--color-bg-primary);
+    background: var(--ga-cream);
 }
 
 
 .ga-trust-grid {
-
-    width: 100%;
 
     max-width: 1200px;
 
@@ -1114,7 +1044,7 @@
     display: grid;
 
     grid-template-columns:
-        repeat(6, minmax(0,1fr));
+        repeat(6, 1fr);
 
     gap: 8px;
 }
@@ -1122,24 +1052,23 @@
 
 .ga-trust-card {
 
-    min-width: 0;
-
-    min-height: 145px;
+    min-height: 140px;
 
     padding:
         18px
-        11px;
+        11px
+        15px;
 
     text-align: center;
 
     border:
         1px solid
-        var(--color-border);
+        var(--ga-border);
 
     border-radius: 6px;
 
     background:
-        rgba(255,255,255,.38);
+        rgba(255,255,255,.42);
 
     transition:
         transform .2s ease,
@@ -1165,11 +1094,16 @@
 
     place-items: center;
 
-    color: var(--color-primary-gold);
+    color: var(--ga-gold);
 
-    font-family: var(--font-serif);
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
 
-    font-size: 32px;
+    font-size: 35px;
+
+    line-height: 1;
 }
 
 
@@ -1177,17 +1111,21 @@
 
     margin:
         8px
-        0;
+        0
+        8px;
 
-    color: var(--color-text-primary);
+    color: #26302b;
 
-    font-family: var(--font-sans);
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
 
-    font-size: 8px;
+    font-size: 7.5px;
 
     font-weight: 700;
 
-    line-height: 1.35;
+    line-height: 1.3;
 }
 
 
@@ -1195,34 +1133,35 @@
 
     margin: 0;
 
-    color: var(--color-text-secondary);
+    color: #656b67;
 
-    font-family: var(--font-sans);
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
 
-    font-size: 8px;
+    font-size: 10px;
 
     line-height: 1.55;
 }
 
 
 /* ============================================================
-   STORIES
+   TESTIMONIALS
 ============================================================ */
 
 .ga-stories {
 
     padding:
-        20px
+        18px
         4%
-        32px;
+        30px;
 
-    background: var(--color-bg-secondary);
+    background: var(--ga-paper);
 }
 
 
 .ga-story-row {
-
-    width: 100%;
 
     max-width: 1180px;
 
@@ -1231,7 +1170,7 @@
     display: grid;
 
     grid-template-columns:
-        repeat(4, minmax(0,1fr));
+        repeat(4, 1fr);
 
     gap: 10px;
 }
@@ -1239,19 +1178,18 @@
 
 .ga-story-card {
 
-    min-width: 0;
-
     min-height: 165px;
 
-    padding: 15px;
+    padding:
+        14px;
 
     border:
         1px solid
-        var(--color-border);
+        var(--ga-border);
 
     border-radius: 7px;
 
-    background: var(--color-bg-primary);
+    background: #fffdf9;
 
     box-shadow:
         0 5px 18px
@@ -1267,17 +1205,14 @@
 
     gap: 9px;
 
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 }
 
 
 .ga-mini-avatar {
 
-    width: 34px;
-
-    height: 34px;
-
-    flex: 0 0 34px;
+    width: 32px;
+    height: 32px;
 
     display: grid;
 
@@ -1285,25 +1220,27 @@
 
     border-radius: 50%;
 
-    background: #eee5d5;
+    background:
+        #eee5d5;
 
-    color: var(--color-primary-gold);
+    color: var(--ga-gold);
 
-    font-family: var(--font-serif);
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
 
     font-size: 16px;
 
-    font-weight: 600;
+    font-weight: 700;
 }
 
 
 .ga-stars {
 
-    color: var(--color-primary-gold);
+    color: var(--ga-gold);
 
-    font-family: var(--font-sans);
-
-    font-size: 9px;
+    font-size: 10px;
 
     letter-spacing: 1px;
 }
@@ -1318,11 +1255,14 @@
         0
         11px;
 
-    color: var(--color-text-secondary);
+    color: #525a55;
 
-    font-family: var(--font-sans);
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
 
-    font-size: 8.5px;
+    font-size: 10px;
 
     line-height: 1.55;
 }
@@ -1334,13 +1274,14 @@
 
     margin-bottom: 2px;
 
-    color: var(--color-text-primary);
+    color: #29322e;
 
-    font-family: var(--font-sans);
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
 
     font-size: 8.5px;
-
-    font-weight: 600;
 }
 
 
@@ -1348,9 +1289,12 @@
 
     display: block;
 
-    color: var(--color-text-secondary);
+    color: #777b77;
 
-    font-family: var(--font-sans);
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
 
     font-size: 7.5px;
 }
@@ -1392,9 +1336,9 @@
     background:
         linear-gradient(
             90deg,
-            #002d26 0%,
-            rgba(0,45,38,.96) 68%,
-            rgba(0,45,38,.55) 100%
+            var(--color-primary-dark) 0%,
+            rgba(17,35,26,.96) 68%,
+            rgba(17,35,26,.55) 100%
         );
 }
 
@@ -1464,19 +1408,21 @@
     object-position: center;
 }
 
+
 /* ============================================================
-   FINAL LINE
+   FINAL STATEMENT
 ============================================================ */
 
 .ga-final-line {
 
     padding:
-        24px
-        20px;
+        22px
+        20px
+        19px;
 
     text-align: center;
 
-    background: var(--color-bg-primary);
+    background: var(--ga-cream);
 }
 
 
@@ -1484,29 +1430,27 @@
 
     margin: 0;
 
-    color: var(--color-text-primary);
+    color: var(--ga-text);
 
-    font-family: var(--font-serif);
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
 
     font-size:
-        clamp(28px, 3vw, 40px);
+        clamp(27px, 3vw, 39px);
 
-    font-weight: 600;
+    font-weight: 500;
 
-    line-height: 1.05;
+    line-height: 1;
 }
 
 
 .ga-final-ornament {
 
-    margin:
-        6px
-        0
-        2px;
+    margin: 6px 0 2px;
 
-    color: var(--color-primary-gold);
-
-    font-family: var(--font-serif);
+    color: var(--ga-gold);
 
     font-size: 11px;
 
@@ -1518,50 +1462,23 @@
 
     margin: 0;
 
-    color: var(--color-text-secondary);
+    color: #737771;
 
-    font-family: var(--font-script);
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
 
-    font-size: 17px;
+    font-size: 14px;
 
-    font-weight: 400;
-
-    line-height: 1.3;
+    font-style: italic;
 }
 
 
-/* ============================================================
-   LARGE LAPTOP / SMALL DESKTOP
-============================================================ */
+.ga-final-line p span {
 
-@media (max-width: 1200px) {
+    color: var(--ga-gold);
 
-    .ga-hero-copy {
-
-        padding-left: 8%;
-        padding-right: 5%;
-    }
-
-
-    .ga-hero-copy h1 {
-
-        font-size: clamp(39px, 4vw, 58px);
-    }
-
-
-    .ga-person-photo {
-
-        height: 280px;
-    }
-
-
-    .ga-trust-grid {
-
-        grid-template-columns:
-            repeat(3, minmax(0,1fr));
-
-        gap: 10px;
-    }
 }
 
 
@@ -1569,67 +1486,91 @@
    TABLET
 ============================================================ */
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
 
     .ga-about-hero {
 
         grid-template-columns:
-            1fr
-            1fr;
-
-        min-height: 460px;
+            45%
+            55%;
     }
 
 
     .ga-hero-copy {
 
-        min-height: 460px;
-
-        padding:
-            45px
-            7%;
+        padding-left: 7%;
+        padding-right: 5%;
     }
 
 
-    .ga-hero-copy h1 {
+    .ga-trust-grid {
 
-        font-size:
-            clamp(36px, 5vw, 52px);
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+/* ============================================================
+   TABLET / MOBILE
+============================================================ */
+
+@media (max-width: 850px) {
+
+    .ga-about-hero {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .ga-hero-copy {
+
+        min-height: 450px;
+
+        padding:
+            60px
+            8%;
+
+        text-align: center;
+
+        align-items: center;
+    }
+
+
+    .ga-hero-copy p {
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .ga-hero-copy::before {
+
+        opacity: .35;
     }
 
 
     .ga-hero-visual {
 
-        min-height: 460px;
+        min-height: 420px;
     }
 
 
-    .ga-hero-visual img {
-
-        min-height: 460px;
-    }
-
-
-    .ga-person {
+    .ga-people-grid {
 
         grid-template-columns: 1fr;
 
-        gap: 14px;
-    }
-
-
-    .ga-person-photo {
-
-        height: 310px;
+        max-width: 760px;
     }
 
 
     .ga-timeline-wrap {
 
         grid-template-columns:
-            repeat(3, minmax(0,1fr));
+            repeat(3, 1fr);
 
-        row-gap: 32px;
+        row-gap: 30px;
     }
 
 
@@ -1639,18 +1580,36 @@
     }
 
 
+    .ga-belief-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
     .ga-story-row {
 
         grid-template-columns:
-            repeat(2, minmax(0,1fr));
+            repeat(2, 1fr);
     }
 
 
     .ga-cta-band {
 
-        grid-template-columns:
-            45%
-            55%;
+        grid-template-columns: 1fr;
+    }
+
+
+    .ga-cta-copy {
+
+        padding:
+            40px
+            8%;
+    }
+
+
+    .ga-cta-image {
+
+        min-height: 300px;
     }
 
 }
@@ -1660,119 +1619,36 @@
    MOBILE
 ============================================================ */
 
-@media (max-width: 650px) {
+@media (max-width: 600px) {
 
     .ga-about-hero {
 
-        display: flex;
-
-        flex-direction: column;
-
-        min-height: auto;
+        display: block;
     }
 
 
     .ga-hero-copy {
 
-        order: 1;
-
         min-height: auto;
 
         padding:
-            50px
-            8%
+            48px
+            7%
             45px;
-
-        align-items: center;
-
-        text-align: center;
-
-        background: var(--color-bg-primary);
-    }
-
-
-    .ga-hero-copy::before {
-
-        left: -20px;
-
-        top: 25px;
-
-        width: 90px;
-
-        height: 280px;
-
-        opacity: .45;
     }
 
 
     .ga-hero-copy h1 {
 
-        max-width: 100%;
+        font-size: 44px;
 
-        font-size:
-            clamp(36px, 10vw, 48px);
-
-        line-height: .98;
-
-        letter-spacing: -.7px;
-    }
-
-
-    .ga-hero-copy p {
-
-        max-width: 440px;
-
-        font-size: 11px;
-    }
-
-
-    .ga-hero-copy .ga-script {
-
-        font-size: 20px;
+        line-height: .94;
     }
 
 
     .ga-hero-visual {
 
-        order: 2;
-
-        min-height: 330px;
-
-        height: 330px;
-    }
-
-
-    .ga-hero-visual img {
-
-        min-height: 330px;
-
-        object-position: center;
-    }
-
-
-    .ga-hero-visual::before {
-
-        top: -1px;
-
-        left: 0;
-
-        width: 100%;
-
-        height: 55px;
-
-        background:
-            linear-gradient(
-                180deg,
-                var(--color-bg-primary),
-                rgba(248,244,235,.45),
-                transparent
-            );
-    }
-
-
-    .ga-hero-visual::after {
-
-        background: none;
+        min-height: 300px;
     }
 
 
@@ -1787,27 +1663,17 @@
     }
 
 
-    .ga-people-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 42px;
-    }
-
-
     .ga-person {
 
         grid-template-columns: 1fr;
 
-        gap: 18px;
+        gap: 15px;
     }
 
 
     .ga-person-photo {
 
-        width: 100%;
-
-        height: min(400px, 85vw);
+        height: 350px;
     }
 
 
@@ -1817,23 +1683,12 @@
     }
 
 
-    .ga-person-copy p {
-
-        max-width: 500px;
-
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-
     .ga-person-copy blockquote {
 
-        max-width: 360px;
+        max-width: 320px;
 
         margin-left: auto;
         margin-right: auto;
-
-        text-align: left;
     }
 
 
@@ -1841,45 +1696,31 @@
 
         grid-template-columns: 1fr;
 
-        gap: 28px;
-    }
-
-
-    .ga-circle {
-
-        width: 95px;
-
-        height: 95px;
+        gap: 25px;
     }
 
 
     .ga-timeline-item p {
 
-        max-width: 300px;
-
-        font-size: 9px;
-    }
-
-
-    .ga-belief-grid {
-
-        grid-template-columns: 1fr;
+        max-width: 260px;
     }
 
 
     .ga-belief {
 
-        grid-template-columns: 42px minmax(0,1fr);
+        grid-template-columns: 1fr;
+
+        text-align: center;
 
         padding:
-            20px;
+            22px;
     }
 
 
     .ga-trust-grid {
 
         grid-template-columns:
-            repeat(2, minmax(0,1fr));
+            repeat(2, 1fr);
     }
 
 
@@ -1889,21 +1730,23 @@
     }
 
 
-    .ga-cta-band {
+    .ga-story-card {
 
-        display: flex;
+        min-height: auto;
+    }
 
-        flex-direction: column;
+
+    .ga-story-card p {
+
+        min-height: auto;
     }
 
 
     .ga-cta-copy {
 
-        padding:
-            42px
-            8%;
-
         text-align: center;
+
+        align-items: center;
     }
 
 
@@ -1916,9 +1759,7 @@
 
     .ga-cta-image {
 
-        min-height: 300px;
-
-        height: 300px;
+        min-height: 240px;
     }
 
 }
@@ -1930,46 +1771,9 @@
 
 @media (max-width: 420px) {
 
-    .ga-hero-copy {
-
-        padding:
-            42px
-            6%
-            40px;
-    }
-
-
     .ga-hero-copy h1 {
 
-        font-size: 37px;
-
-        line-height: 1;
-    }
-
-
-    .ga-hero-copy p {
-
-        font-size: 10px;
-    }
-
-
-    .ga-hero-copy .ga-script {
-
-        font-size: 18px;
-    }
-
-
-    .ga-hero-visual {
-
-        min-height: 270px;
-
-        height: 270px;
-    }
-
-
-    .ga-hero-visual img {
-
-        min-height: 270px;
+        font-size: 39px;
     }
 
 
@@ -1979,29 +1783,9 @@
     }
 
 
-    .ga-section-head p {
-
-        font-size: 9px;
-    }
-
-
     .ga-trust-grid {
 
         grid-template-columns: 1fr;
-    }
-
-
-    .ga-belief {
-
-        grid-template-columns: 1fr;
-
-        text-align: center;
-    }
-
-
-    .ga-belief-icon {
-
-        margin-bottom: 3px;
     }
 
 
@@ -2011,30 +1795,16 @@
     }
 
 
-    .ga-cta-copy h2 {
-
-        font-size: 34px;
-    }
-
-
-    .ga-cta-image {
-
-        min-height: 250px;
-
-        height: 250px;
-    }
-
-
     .ga-final-line h2 {
 
-        font-size: 29px;
+        font-size: 28px;
     }
 
 }
 
 
 /* ============================================================
-   ACCESSIBILITY / OVERFLOW SAFETY
+   SHARED SITE TYPOGRAPHY
 ============================================================ */
 
 .ga-about-hero,
@@ -2045,33 +1815,79 @@
 .ga-stories,
 .ga-cta-band,
 .ga-final-line {
-
-    max-width: 100%;
-
-    overflow-x: clip;
+    font-family: var(--font-sans);
 }
 
-
-.ga-about-hero img,
-.ga-people img,
-.ga-timeline img,
-.ga-beliefs img,
-.ga-trust img,
-.ga-stories img,
-.ga-cta-band img {
-
-    max-width: 100%;
+.ga-kicker,
+.ga-hero-copy p,
+.ga-person-copy > span,
+.ga-person-copy p,
+.ga-timeline-item p,
+.ga-belief span,
+.ga-belief p,
+.ga-trust-card h3,
+.ga-trust-card p,
+.ga-story-card p,
+.ga-story-card strong,
+.ga-story-card > span,
+.ga-cta-copy p {
+    font-family: var(--font-sans);
 }
 
-
-.ga-about-hero h1,
+.ga-hero-copy h1,
 .ga-section-head h2,
 .ga-person-copy h3,
+.ga-divider,
+.ga-belief-icon,
+.ga-line-icon,
+.ga-mini-avatar,
 .ga-cta-copy h2,
-.ga-final-line h2,
-.ga-person-copy p,
-.ga-hero-copy p,
-.ga-cta-copy p {
+.ga-final-line h2 {
+    font-family: var(--font-serif);
+}
 
-    overflow-wrap: break-word;
+.ga-hero-copy .ga-script,
+.ga-final-line p {
+    font-family: var(--font-script);
+}
+
+.ga-section-head p {
+    font-size: 14px;
+}
+
+.ga-person-copy h3 {
+    font-size: clamp(24px, 2vw, 31px);
+    line-height: 1.05;
+}
+
+.ga-person-copy > span {
+    font-size: 12px;
+}
+
+.ga-person-copy p,
+.ga-belief p,
+.ga-trust-card p,
+.ga-story-card p,
+.ga-cta-copy p {
+    font-size: 14px;
+}
+
+.ga-timeline-item h3,
+.ga-belief span,
+.ga-trust-card h3,
+.ga-story-card strong {
+    font-size: 12px;
+}
+
+.ga-timeline-item p,
+.ga-story-card > span {
+    font-size: 12px;
+}
+
+.ga-story-card strong {
+    font-weight: 600;
+}
+
+.ga-final-line p {
+    font-size: 18px;
 }

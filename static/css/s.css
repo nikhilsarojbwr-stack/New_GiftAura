@@ -8,7 +8,35 @@
 /* ============================================================
    ROOT
 ============================================================ */
+:root {
+            --color-primary-dark: #11231A;
+            --color-primary-gold: #C19B54;
+            --color-primary-gold-dark: #A8813C;
+            --color-body-bg: #FBF9F4;
+            --color-card-bg-occasion: #FEF2F2;
+            --color-text-primary: #222222;
+            --color-text-secondary: #666666;
+            --color-white: #FFFFFF;
+            --color-border-light: #EAEAEA;
+            --color-input-bg: #F9F9F9;
+            --color-footer-bg: #0A1410;
 
+            --font-serif: 'Playfair Display', 'Merriweather', serif;
+            --font-sans: 'Poppins', 'Montserrat', sans-serif;
+            --font-script: 'Great Vibes', 'Dancing Script', cursive;
+
+            --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.05);
+            --shadow-drop: 0 10px 10px rgba(0, 0, 0, 0.10);
+
+            --radius-card: 8px;
+            --radius-btn: 30px;
+            --radius-category: 20px;
+            --radius-form: 6px;
+            --radius-occasion: 12px;
+
+            --section-spacing: 80px 5%;
+            --nav-padding: 15px 5%;
+        }
 .ga-about-hero,
 .ga-people,
 .ga-timeline,
@@ -862,11 +890,12 @@
         5%
         29px;
 
-    background:
+        background:
         linear-gradient(
-            110deg,
-            var(--ga-green-dark),
-            var(--ga-green)
+            90deg,
+            #002d26 0%,
+            rgba(0,45,38,.96) 68%,
+            rgba(0,45,38,.55) 100%
         );
 }
 
