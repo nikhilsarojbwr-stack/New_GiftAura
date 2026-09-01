@@ -2,7 +2,7 @@
 
 Automatically Generated
 
-Generated On: 2026-08-26 15:35:27
+Generated On: 2026-09-01 14:40:42
 
 ---
 
@@ -14,9 +14,12 @@ gap
 │   └── categories.json
 ├── static
 │   ├── css
+│   │   ├── about.css
 │   │   └── style.css
 │   ├── images
 │   │   ├── celebrations
+│   │   │   ├── anniversary-gallery1.jpg
+│   │   │   ├── anniversary-gallery2.jpg
 │   │   │   ├── anniversary.jpg
 │   │   │   ├── birthday-gallery1.jpg
 │   │   │   ├── birthday-gallery2.jpg
@@ -26,9 +29,20 @@ gap
 │   │   │   ├── custom.jpg
 │   │   │   ├── proposal.jpg
 │   │   │   └── romantic.jpg
-│   │   └── products
-│   │       ├── c2210b5eee67419f832f36d05c65cbe4.png
-│   │       └── eeab65696fd049be883c7698778d1afa.png
+│   │   ├── products
+│   │   │   ├── c2210b5eee67419f832f36d05c65cbe4.png
+│   │   │   └── eeab65696fd049be883c7698778d1afa.png
+│   │   ├── .png
+│   │   ├── branch-left.png
+│   │   ├── cta-event-family.jpg
+│   │   ├── hero-event-scene.jpg
+│   │   ├── nikhil.png
+│   │   ├── timeline-01.jpg
+│   │   ├── timeline-02.jpg
+│   │   ├── timeline-03.jpg
+│   │   ├── timeline-04.jpg
+│   │   ├── timeline-05.jpg
+│   │   └── vidhi.png
 │   └── js
 ├── templates
 │   ├── about
@@ -63,7 +77,8 @@ gap
 │   │   └── navbar.html
 │   ├── shop
 │   │   └── shop.html
-│   └── __init__.py
+│   ├── __init__.py
+│   └── faq.html
 ├── .dockerignore
 ├── .gitignore
 ├── build.py
@@ -74,14 +89,15 @@ gap
 ├── PROJECT_STRUCTURE.md
 ├── push_giftaura.bat
 ├── README.md
+├── README.txt
 └── requirements.txt
 ```
 
 ## Statistics
 
 - Folders: 16
-- Files: 49
+- Files: 65
 - Python files: 4
 - Dockerfiles: 1
 - .dockerignore files: 1
-- Data files (JSON, YAML, CSV, etc.): 5
+- Data files (JSON, YAML, CSV, etc.): 6

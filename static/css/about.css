@@ -1,645 +1,1704 @@
 /* ============================================================
-   GIFTAURA ABOUT PAGE — REFERENCE MATCH
-   Assumes shared/base.html provides the global header/footer,
-   .container, and button reset styles.
-   ============================================================ */
+   GIFTAURA — ABOUT / EVENT PLANNING PAGE
+   Premium editorial design
+   Cream + Deep Green + Antique Gold
+============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+
+
+/* ============================================================
+   VARIABLES
+============================================================ */
 
 :root {
-    --ga-cream: #f8f4ea;
+    --ga-cream: #f7f3e9;
     --ga-paper: #fffdf7;
-    --ga-dark: #002f28;
-    --ga-dark-2: #003b31;
-    --ga-gold: #c8913b;
-    --ga-gold-soft: #d8b064;
-    --ga-text: #142723;
-    --ga-muted: #5f6662;
-    --ga-line: #ddcfb8;
-    --ga-card: #fffdf9;
+    --ga-white: #ffffff;
+
+    --ga-green: #00352d;
+    --ga-green-dark: #002a24;
+    --ga-green-soft: #06453a;
+
+    --ga-gold: #c58b35;
+    --ga-gold-light: #d9b16a;
+
+    --ga-text: #172923;
+    --ga-muted: #626863;
+
+    --ga-border: #e2d7c4;
+    --ga-shadow: rgba(30, 27, 19, .09);
 }
 
-.ga-about-hero {
-    min-height: 430px;
-    display: grid;
-    grid-template-columns: 43% 57%;
-    overflow: hidden;
-    background: var(--ga-cream);
+
+/* ============================================================
+   GLOBAL
+============================================================ */
+
+.ga-about-hero,
+.ga-people,
+.ga-timeline,
+.ga-beliefs,
+.ga-trust,
+.ga-stories,
+.ga-cta-band,
+.ga-final-line {
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.ga-hero-copy {
-    position: relative;
-    z-index: 2;
-    padding: 42px 24px 34px clamp(32px, 8vw, 112px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background:
-        radial-gradient(circle at 8% 18%, rgba(255,255,255,.55), transparent 28%),
-        var(--ga-cream);
+.ga-about-hero *,
+.ga-people *,
+.ga-timeline *,
+.ga-beliefs *,
+.ga-trust *,
+.ga-stories *,
+.ga-cta-band *,
+.ga-final-line * {
+    box-sizing: border-box;
 }
 
-.ga-hero-copy::before,
-.ga-hero-copy::after {
-    content: "";
-    position: absolute;
-    width: 140px;
-    height: 220px;
-    left: -42px;
-    opacity: .72;
-    background: url('/static/images/branch-left.png') left center / contain no-repeat;
-    pointer-events: none;
-}
 
-.ga-hero-copy::before { top: 5px; }
-.ga-hero-copy::after { bottom: -28px; transform: rotate(180deg); }
+/* ============================================================
+   TYPOGRAPHY
+============================================================ */
 
-.ga-kicker,
-.ga-belief span,
-.ga-person-copy > span {
+.ga-kicker {
+    display: block;
+
     color: var(--ga-gold);
+
     font-family: 'Montserrat', Arial, sans-serif;
+
     font-size: 10px;
-    line-height: 1.2;
     font-weight: 700;
+
     letter-spacing: 2px;
+
     text-transform: uppercase;
 }
 
-.ga-hero-copy h1 {
-    margin: 0;
-    color: var(--ga-text);
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: clamp(42px, 4.4vw, 68px);
-    line-height: .92;
-    font-weight: 600;
-    letter-spacing: -.7px;
-}
 
-.ga-divider {
-    margin: 11px 0 8px;
-    width: 60px;
-    color: var(--ga-gold);
-    letter-spacing: 7px;
-    font-size: 12px;
-}
+/* ============================================================
+   HERO
+============================================================ */
 
-.ga-hero-copy p {
-    max-width: 440px;
-    margin: 0 0 10px;
-    color: #3e4643;
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 10.8px;
-    line-height: 1.58;
-}
+.ga-about-hero {
 
-.ga-script {
-    margin-top: 1px !important;
-    margin-bottom: 14px !important;
-    color: var(--ga-gold) !important;
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
-    font-size: 19px !important;
-    font-style: italic;
-}
+    min-height: 500px;
 
-.ga-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: fit-content;
-    min-height: 38px;
-    padding: 10px 17px;
-    border-radius: 4px;
-    background: var(--ga-dark);
-    color: #fff;
-    text-decoration: none;
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    transition: transform .18s ease, box-shadow .18s ease;
-}
+    display: grid;
 
-.ga-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(0, 47, 40, .17);
-}
+    grid-template-columns: 42% 58%;
 
-.ga-hero-visual {
-    position: relative;
-    min-height: 430px;
-}
+    overflow: hidden;
 
-.ga-hero-visual img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-}
-
-.ga-people,
-.ga-timeline,
-.ga-trust,
-.ga-stories {
-    padding: 18px 4.1% 26px;
     background: var(--ga-cream);
 }
 
-.ga-section-head {
-    text-align: center;
-    margin: 0 auto 17px;
-}
 
-.ga-section-head h2 {
-    margin: 0;
-    color: var(--ga-text);
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: clamp(28px, 3vw, 42px);
-    font-weight: 600;
-    line-height: 1;
-}
+.ga-hero-copy {
 
-.ga-section-head p {
-    margin: 7px 0 0;
-    color: #5c625e;
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 9px;
-}
-
-.ga-people-grid {
-    max-width: 1180px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.ga-person {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    align-items: center;
-}
-
-.ga-person-photo {
-    height: 285px;
-    overflow: hidden;
-    border-radius: 7px;
-    box-shadow: 0 8px 25px rgba(39, 31, 20, .09);
-}
-
-.ga-person-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-}
-
-.ga-person-copy h3 {
-    margin: 0 0 3px;
-    color: var(--ga-text);
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 22px;
-    line-height: 1;
-    font-weight: 600;
-}
-
-.ga-person-copy > span {
-    display: block;
-    margin-bottom: 14px;
-}
-
-.ga-person-copy p {
-    margin: 0;
-    color: #4f5753;
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 9.5px;
-    line-height: 1.72;
-}
-
-.ga-person-copy blockquote {
-    margin: 14px 0 0;
-    color: var(--ga-gold);
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 13px;
-    line-height: 1.22;
-    font-style: italic;
-}
-
-.ga-timeline {
-    border-top: 1px solid rgba(164, 139, 92, .25);
-}
-
-.ga-timeline-wrap {
-    max-width: 1160px;
-    margin: 0 auto;
     position: relative;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 16px;
-}
 
-.ga-timeline-line {
-    position: absolute;
-    top: 47px;
-    left: 8%;
-    right: 8%;
-    height: 1px;
-    background: var(--ga-gold-soft);
-}
-
-.ga-timeline-item {
-    text-align: center;
-    position: relative;
-    z-index: 1;
-}
-
-.ga-circle {
-    width: 82px;
-    height: 82px;
-    margin: 0 auto;
-    border-radius: 50%;
-    padding: 3px;
-    background: var(--ga-paper);
-    border: 1px solid var(--ga-gold);
-    overflow: hidden;
-}
-
-.ga-circle img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.ga-number {
-    width: 27px;
-    height: 27px;
-    margin: -13px auto 8px;
-    position: relative;
     z-index: 2;
-    display: grid;
-    place-items: center;
-    border: 1px solid var(--ga-gold);
-    background: var(--ga-paper);
-    border-radius: 50%;
-    color: #34413d;
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 9px;
-    font-weight: 600;
+
+    padding:
+        48px
+        clamp(40px, 7vw, 110px)
+        45px
+        clamp(45px, 8vw, 125px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 10% 25%,
+            rgba(255,255,255,.65),
+            transparent 30%
+        ),
+        var(--ga-cream);
 }
 
-.ga-timeline-item h3 {
-    margin: 0 0 6px;
-    color: var(--ga-text);
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 9px;
-    font-weight: 700;
-}
 
-.ga-timeline-item p {
-    max-width: 165px;
-    margin: 0 auto;
-    color: #666d68;
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 8px;
-    line-height: 1.65;
-}
+/* botanical decoration */
 
-.ga-beliefs {
-    position: relative;
-    overflow: hidden;
-    padding: 18px 5% 24px;
-    background: var(--ga-dark);
-}
+.ga-hero-copy::before {
 
-.ga-light-head h2 {
-    color: #fffdf7;
-}
+    content: "";
 
-.ga-belief-grid {
-    max-width: 1040px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    position: relative;
-    z-index: 1;
-}
-
-.ga-belief {
-    min-height: 122px;
-    padding: 18px 22px;
-    display: grid;
-    grid-template-columns: 36px 1fr;
-    gap: 14px;
-    align-items: center;
-    border: 1px solid rgba(200,145,59,.75);
-    border-radius: 6px;
-    background: rgba(1, 43, 36, .45);
-}
-
-.ga-belief-icon {
-    color: var(--ga-gold);
-    font-size: 32px;
-    line-height: 1;
-    text-align: center;
-}
-
-.ga-belief span {
-    display: block;
-    margin-bottom: 8px;
-}
-
-.ga-belief p {
-    margin: 0;
-    color: #f5f0e7;
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 12px;
-    line-height: 1.42;
-}
-
-.ga-branch {
     position: absolute;
-    top: 15px;
-    width: 100px;
-    opacity: .66;
+
+    left: -35px;
+    top: 30px;
+
+    width: 145px;
+    height: 360px;
+
+    background:
+        url('/static/images/branch-left.png')
+        center / contain
+        no-repeat;
+
+    opacity: .62;
+
     pointer-events: none;
 }
 
-.ga-branch-left { left: 0; }
-.ga-branch-right { right: 0; transform: scaleX(-1); }
 
-.ga-trust {
-    padding-top: 18px;
-}
+.ga-hero-copy h1 {
 
-.ga-trust-grid {
-    max-width: 1180px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 8px;
-}
-
-.ga-trust-card {
-    min-height: 130px;
-    padding: 17px 11px 14px;
-    text-align: center;
-    border: 1px solid #e4d9c7;
-    border-radius: 6px;
-    background: rgba(255,255,255,.5);
-}
-
-.ga-line-icon {
-    height: 38px;
-    color: var(--ga-gold);
-    display: grid;
-    place-items: center;
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 35px;
-    line-height: 1;
-}
-
-.ga-trust-card h3 {
-    margin: 7px 0 7px;
-    color: #242d29;
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 7.5px;
-    line-height: 1.25;
-    font-weight: 700;
-}
-
-.ga-trust-card p {
-    margin: 0;
-    color: #626864;
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 7.4px;
-    line-height: 1.55;
-}
-
-.ga-stories {
-    padding-top: 11px;
-}
-
-.ga-story-row {
-    max-width: 1170px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-}
-
-.ga-story-card {
-    min-height: 160px;
-    padding: 14px 13px 12px;
-    background: var(--ga-paper);
-    border: 1px solid #e6dac6;
-    border-radius: 7px;
-}
-
-.ga-stars {
-    color: var(--ga-gold);
-    font-size: 10px;
-    letter-spacing: 1px;
-    margin-bottom: 7px;
-}
-
-.ga-story-card p {
-    min-height: 74px;
-    margin: 0 0 12px;
-    color: #4f5753;
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 7.9px;
-    line-height: 1.55;
-}
-
-.ga-story-card strong,
-.ga-story-card span {
-    display: block;
-    font-family: 'Montserrat', Arial, sans-serif;
-}
-
-.ga-story-card strong {
-    color: #29332f;
-    font-size: 8.8px;
-    margin-bottom: 2px;
-}
-
-.ga-story-card span {
-    color: #777c77;
-    font-size: 7.6px;
-}
-
-.ga-cta-band {
     position: relative;
-    min-height: 176px;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 42% 58%;
-    background: var(--ga-dark);
+
+    margin: 9px 0 0;
+
+    color: var(--ga-text);
+
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(42px, 4.5vw, 70px);
+
+    font-weight: 500;
+
+    line-height: .92;
+
+    letter-spacing: -1px;
 }
 
-.ga-cta-copy {
-    position: relative;
-    z-index: 2;
-    padding: 26px 34px 24px 11%;
-    background:
-        linear-gradient(90deg, rgba(0, 47, 40, 1) 0%, rgba(0, 47, 40, .95) 72%, rgba(0, 47, 40, .42) 100%);
+
+.ga-divider {
+
+    margin: 17px 0 13px;
+
+    color: var(--ga-gold);
+
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+    font-size: 15px;
+
+    letter-spacing: 7px;
 }
 
-.ga-cta-copy h2 {
-    margin: 0 0 9px;
-    color: #fffdf7;
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 35px;
+
+.ga-hero-copy p {
+
+    max-width: 430px;
+
+    margin: 0 0 11px;
+
+    color: #4e5752;
+
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
+
+    font-size: 10.5px;
+
+    line-height: 1.65;
+}
+
+
+.ga-script {
+
+    margin-top: 5px !important;
+    margin-bottom: 17px !important;
+
+    color: var(--ga-gold) !important;
+
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif !important;
+
+    font-size: 20px !important;
+
+    font-style: italic;
+
     font-weight: 600;
-    line-height: .93;
 }
 
-.ga-cta-copy p {
-    max-width: 260px;
-    margin: 0 0 13px;
-    color: #e8ece8;
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 8.5px;
-    line-height: 1.55;
+
+/* ============================================================
+   BUTTON
+============================================================ */
+
+.ga-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    width: fit-content;
+
+    min-height: 39px;
+
+    padding: 10px 18px;
+
+    border: 0;
+
+    border-radius: 4px;
+
+    background: var(--ga-green);
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
 }
+
+
+.ga-btn span {
+    font-size: 14px;
+}
+
+
+.ga-btn:hover {
+
+    transform: translateY(-2px);
+
+    background: var(--ga-green-dark);
+
+    box-shadow:
+        0 9px 25px
+        rgba(0, 53, 45, .20);
+}
+
 
 .ga-btn-gold {
+
     background: var(--ga-gold);
-    color: #fff;
 }
 
-.ga-cta-image img {
+
+.ga-btn-gold:hover {
+
+    background: #ad7628;
+
+}
+
+
+/* ============================================================
+   HERO IMAGE
+============================================================ */
+
+.ga-hero-visual {
+
+    position: relative;
+
+    min-height: 500px;
+
+    overflow: hidden;
+}
+
+
+.ga-hero-visual::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(247,243,233,.08),
+            transparent 20%
+        );
+
+    pointer-events: none;
+}
+
+
+.ga-hero-visual img {
+
     width: 100%;
     height: 100%;
-    object-fit: cover;
+
     display: block;
+
+    object-fit: cover;
+
     object-position: center;
 }
 
-.ga-final-line {
+
+/* ============================================================
+   COMMON SECTION HEAD
+============================================================ */
+
+.ga-section-head {
+
     text-align: center;
-    padding: 17px 20px 14px;
-    background: var(--ga-cream);
+
+    max-width: 850px;
+
+    margin:
+        0
+        auto
+        23px;
 }
 
-.ga-final-line h2 {
-    margin: 0;
+
+.ga-section-head h2 {
+
+    margin: 6px 0 0;
+
     color: var(--ga-text);
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 30px;
+
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(30px, 3vw, 43px);
+
+    font-weight: 500;
+
     line-height: 1;
+}
+
+
+.ga-section-head p {
+
+    margin: 7px 0 0;
+
+    color: #686e69;
+
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    line-height: 1.5;
+}
+
+
+/* ============================================================
+   FOUNDERS
+============================================================ */
+
+.ga-people {
+
+    padding:
+        26px
+        5%
+        34px;
+
+    background: var(--ga-cream);
+
+    border-top:
+        1px solid
+        rgba(180,150,100,.18);
+}
+
+
+.ga-people-grid {
+
+    max-width: 1160px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 35px;
+}
+
+
+.ga-person {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 16px;
+
+    align-items: center;
+}
+
+
+.ga-person-photo {
+
+    height: 300px;
+
+    overflow: hidden;
+
+    border-radius: 6px;
+
+    background: #ddd;
+
+    box-shadow:
+        0 10px 30px
+        var(--ga-shadow);
+}
+
+
+.ga-person-photo img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+
+.ga-person-copy h3 {
+
+    margin: 0 0 3px;
+
+    color: var(--ga-text);
+
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+    font-size: 25px;
+
+    font-weight: 600;
+
+    line-height: 1;
+}
+
+
+.ga-person-copy > span {
+
+    display: block;
+
+    margin-bottom: 14px;
+
+    color: var(--ga-gold);
+
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
     font-weight: 600;
 }
 
-.ga-final-line p {
-    margin: 4px 0 0;
-    color: #737671;
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 14px;
-    font-style: italic;
+
+.ga-person-copy p {
+
+    margin: 0;
+
+    color: #505954;
+
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    line-height: 1.7;
 }
 
-.ga-final-line p span {
+
+.ga-person-copy blockquote {
+
+    position: relative;
+
+    margin: 15px 0 0;
+
+    padding-left: 14px;
+
+    color: var(--ga-gold);
+
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+    font-size: 14px;
+
+    font-style: italic;
+
+    line-height: 1.25;
+}
+
+
+.ga-person-copy blockquote::before {
+
+    content: "“";
+
+    position: absolute;
+
+    left: -3px;
+    top: -10px;
+
+    font-size: 34px;
+
     color: var(--ga-gold);
 }
 
-/* ----------------------------- Responsive ----------------------------- */
 
-@media (max-width: 1050px) {
+/* ============================================================
+   TIMELINE
+============================================================ */
+
+.ga-timeline {
+
+    padding:
+        25px
+        4%
+        32px;
+
+    background: var(--ga-paper);
+
+    border-top:
+        1px solid
+        rgba(164,139,92,.22);
+}
+
+
+.ga-timeline-wrap {
+
+    position: relative;
+
+    max-width: 1170px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 16px;
+}
+
+
+.ga-timeline-line {
+
+    position: absolute;
+
+    top: 46px;
+
+    left: 9%;
+    right: 9%;
+
+    height: 1px;
+
+    background:
+        var(--ga-gold-light);
+
+    z-index: 0;
+}
+
+
+.ga-timeline-item {
+
+    position: relative;
+
+    z-index: 1;
+
+    text-align: center;
+}
+
+
+.ga-circle {
+
+    width: 86px;
+    height: 86px;
+
+    margin: 0 auto;
+
+    padding: 3px;
+
+    border:
+        1px solid
+        var(--ga-gold);
+
+    border-radius: 50%;
+
+    background: var(--ga-paper);
+
+    overflow: hidden;
+}
+
+
+.ga-circle img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+
+.ga-number {
+
+    position: relative;
+
+    width: 28px;
+    height: 28px;
+
+    margin:
+        -13px
+        auto
+        9px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid
+        var(--ga-gold);
+
+    border-radius: 50%;
+
+    background:
+        var(--ga-paper);
+
+    color: var(--ga-text);
+
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+
+.ga-timeline-item h3 {
+
+    margin: 0 0 7px;
+
+    color: var(--ga-text);
+
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
+
+    font-size: 8.5px;
+
+    font-weight: 700;
+}
+
+
+.ga-timeline-item p {
+
+    max-width: 170px;
+
+    margin: 0 auto;
+
+    color: #656c67;
+
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
+
+    font-size: 8px;
+
+    line-height: 1.65;
+}
+
+
+/* ============================================================
+   BELIEFS
+============================================================ */
+
+.ga-beliefs {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        25px
+        5%
+        29px;
+
+    background:
+        linear-gradient(
+            110deg,
+            var(--ga-green-dark),
+            var(--ga-green)
+        );
+}
+
+
+.ga-light-head {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.ga-light-head h2 {
+
+    color: #fffdf7;
+}
+
+
+.ga-light-head p {
+
+    color: #ddd9ce;
+}
+
+
+.ga-belief-grid {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+
+.ga-belief {
+
+    min-height: 125px;
+
+    padding:
+        20px
+        25px;
+
+    display: grid;
+
+    grid-template-columns:
+        42px 1fr;
+
+    gap: 15px;
+
+    align-items: center;
+
+    border:
+        1px solid
+        rgba(197,139,53,.75);
+
+    border-radius: 6px;
+
+    background:
+        rgba(0,0,0,.12);
+}
+
+
+.ga-belief-icon {
+
+    color: var(--ga-gold);
+
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+    font-size: 35px;
+
+    text-align: center;
+}
+
+
+.ga-belief span {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--ga-gold);
+
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.ga-belief p {
+
+    margin: 0;
+
+    color: #f4f0e7;
+
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* branches */
+
+.ga-branch {
+
+    position: absolute;
+
+    width: 125px;
+
+    opacity: .5;
+
+    pointer-events: none;
+}
+
+
+.ga-branch-left {
+
+    left: -10px;
+    bottom: -5px;
+}
+
+
+.ga-branch-right {
+
+    right: -10px;
+    top: 15px;
+
+    transform:
+        scaleX(-1);
+}
+
+
+/* ============================================================
+   WHY GIFTAURA
+============================================================ */
+
+.ga-trust {
+
+    padding:
+        26px
+        3.5%
+        30px;
+
+    background: var(--ga-cream);
+}
+
+
+.ga-trust-grid {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 8px;
+}
+
+
+.ga-trust-card {
+
+    min-height: 140px;
+
+    padding:
+        18px
+        11px
+        15px;
+
+    text-align: center;
+
+    border:
+        1px solid
+        var(--ga-border);
+
+    border-radius: 6px;
+
+    background:
+        rgba(255,255,255,.42);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.ga-trust-card:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(45,35,20,.08);
+}
+
+
+.ga-line-icon {
+
+    height: 38px;
+
+    display: grid;
+
+    place-items: center;
+
+    color: var(--ga-gold);
+
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+    font-size: 35px;
+
+    line-height: 1;
+}
+
+
+.ga-trust-card h3 {
+
+    margin:
+        8px
+        0
+        8px;
+
+    color: #26302b;
+
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
+
+    font-size: 7.5px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+
+.ga-trust-card p {
+
+    margin: 0;
+
+    color: #656b67;
+
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
+
+    font-size: 7.4px;
+
+    line-height: 1.55;
+}
+
+
+/* ============================================================
+   TESTIMONIALS
+============================================================ */
+
+.ga-stories {
+
+    padding:
+        18px
+        4%
+        30px;
+
+    background: var(--ga-paper);
+}
+
+
+.ga-story-row {
+
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+
+.ga-story-card {
+
+    min-height: 165px;
+
+    padding:
+        14px;
+
+    border:
+        1px solid
+        var(--ga-border);
+
+    border-radius: 7px;
+
+    background: #fffdf9;
+
+    box-shadow:
+        0 5px 18px
+        rgba(40,32,20,.035);
+}
+
+
+.ga-testimonial-top {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 7px;
+}
+
+
+.ga-mini-avatar {
+
+    width: 32px;
+    height: 32px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        #eee5d5;
+
+    color: var(--ga-gold);
+
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+    font-size: 16px;
+
+    font-weight: 700;
+}
+
+
+.ga-stars {
+
+    color: var(--ga-gold);
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+.ga-story-card p {
+
+    min-height: 68px;
+
+    margin:
+        0
+        0
+        11px;
+
+    color: #525a55;
+
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
+
+    font-size: 8px;
+
+    line-height: 1.55;
+}
+
+
+.ga-story-card strong {
+
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #29322e;
+
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
+
+    font-size: 8.5px;
+}
+
+
+.ga-story-card > span {
+
+    display: block;
+
+    color: #777b77;
+
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
+
+    font-size: 7.5px;
+}
+
+
+/* ============================================================
+   CTA
+============================================================ */
+
+.ga-cta-band {
+
+    min-height: 205px;
+
+    display: grid;
+
+    grid-template-columns:
+        43%
+        57%;
+
+    overflow: hidden;
+
+    background:
+        var(--ga-green-dark);
+}
+
+
+.ga-cta-copy {
+
+    position: relative;
+
+    z-index: 2;
+
+    padding:
+        28px
+        30px
+        25px
+        clamp(35px, 9vw, 120px);
+
+    background:
+        linear-gradient(
+            90deg,
+            #002d26 0%,
+            rgba(0,45,38,.96) 68%,
+            rgba(0,45,38,.55) 100%
+        );
+}
+
+
+.ga-cta-copy h2 {
+
+    margin:
+        7px
+        0
+        10px;
+
+    color: #fffdf7;
+
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(30px, 3.2vw, 43px);
+
+    font-weight: 500;
+
+    line-height: .94;
+}
+
+
+.ga-cta-copy p {
+
+    max-width: 320px;
+
+    margin:
+        0
+        0
+        14px;
+
+    color: #e8ebe6;
+
+    font-family:
+        'Montserrat',
+        Arial,
+        sans-serif;
+
+    font-size: 8.5px;
+
+    line-height: 1.6;
+}
+
+
+.ga-cta-image {
+
+    min-height: 205px;
+
+    overflow: hidden;
+}
+
+
+.ga-cta-image img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+
+/* ============================================================
+   FINAL STATEMENT
+============================================================ */
+
+.ga-final-line {
+
+    padding:
+        22px
+        20px
+        19px;
+
+    text-align: center;
+
+    background: var(--ga-cream);
+}
+
+
+.ga-final-line h2 {
+
+    margin: 0;
+
+    color: var(--ga-text);
+
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(27px, 3vw, 39px);
+
+    font-weight: 500;
+
+    line-height: 1;
+}
+
+
+.ga-final-ornament {
+
+    margin: 6px 0 2px;
+
+    color: var(--ga-gold);
+
+    font-size: 11px;
+
+    letter-spacing: 7px;
+}
+
+
+.ga-final-line p {
+
+    margin: 0;
+
+    color: #737771;
+
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+    font-size: 14px;
+
+    font-style: italic;
+}
+
+
+.ga-final-line p span {
+
+    color: var(--ga-gold);
+
+}
+
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 1100px) {
+
     .ga-about-hero {
+
+        grid-template-columns:
+            45%
+            55%;
+    }
+
+
+    .ga-hero-copy {
+
+        padding-left: 7%;
+        padding-right: 5%;
+    }
+
+
+    .ga-trust-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+/* ============================================================
+   TABLET / MOBILE
+============================================================ */
+
+@media (max-width: 850px) {
+
+    .ga-about-hero {
+
         grid-template-columns: 1fr;
     }
 
+
     .ga-hero-copy {
-        padding: 48px 8%;
+
+        min-height: 450px;
+
+        padding:
+            60px
+            8%;
+
         text-align: center;
+
+        align-items: center;
     }
 
-    .ga-hero-copy p,
-    .ga-btn {
+
+    .ga-hero-copy p {
+
         margin-left: auto;
         margin-right: auto;
     }
 
-    .ga-hero-visual {
-        min-height: 360px;
+
+    .ga-hero-copy::before {
+
+        opacity: .35;
     }
+
+
+    .ga-hero-visual {
+
+        min-height: 420px;
+    }
+
 
     .ga-people-grid {
+
         grid-template-columns: 1fr;
-        max-width: 850px;
+
+        max-width: 760px;
     }
 
-    .ga-trust-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
 
-@media (max-width: 760px) {
     .ga-timeline-wrap {
-        grid-template-columns: 1fr;
-        gap: 22px;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        row-gap: 30px;
     }
+
 
     .ga-timeline-line {
-        top: 40px;
-        bottom: 40px;
-        left: 50%;
-        right: auto;
-        width: 1px;
-        height: auto;
+
+        display: none;
     }
 
-    .ga-timeline-item p {
-        max-width: 250px;
-    }
 
     .ga-belief-grid {
+
         grid-template-columns: 1fr;
     }
 
-    .ga-trust-grid,
+
     .ga-story-row {
-        grid-template-columns: 1fr 1fr;
+
+        grid-template-columns:
+            repeat(2, 1fr);
     }
+
 
     .ga-cta-band {
+
         grid-template-columns: 1fr;
     }
+
 
     .ga-cta-copy {
-        padding: 30px 8%;
+
+        padding:
+            40px
+            8%;
     }
+
 
     .ga-cta-image {
-        min-height: 220px;
+
+        min-height: 300px;
     }
+
 }
 
-@media (max-width: 520px) {
-    .ga-person {
-        grid-template-columns: 1fr;
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 600px) {
+
+    .ga-about-hero {
+
+        display: block;
     }
+
+
+    .ga-hero-copy {
+
+        min-height: auto;
+
+        padding:
+            48px
+            7%
+            45px;
+    }
+
+
+    .ga-hero-copy h1 {
+
+        font-size: 44px;
+
+        line-height: .94;
+    }
+
+
+    .ga-hero-visual {
+
+        min-height: 300px;
+    }
+
+
+    .ga-people,
+    .ga-timeline,
+    .ga-beliefs,
+    .ga-trust,
+    .ga-stories {
+
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+
+    .ga-person {
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
 
     .ga-person-photo {
-        height: 320px;
+
+        height: 350px;
     }
 
-    .ga-trust-grid,
+
+    .ga-person-copy {
+
+        text-align: center;
+    }
+
+
+    .ga-person-copy blockquote {
+
+        max-width: 320px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .ga-timeline-wrap {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    .ga-timeline-item p {
+
+        max-width: 260px;
+    }
+
+
+    .ga-belief {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding:
+            22px;
+    }
+
+
+    .ga-trust-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
     .ga-story-row {
+
         grid-template-columns: 1fr;
     }
 
+
+    .ga-story-card {
+
+        min-height: auto;
+    }
+
+
+    .ga-story-card p {
+
+        min-height: auto;
+    }
+
+
+    .ga-cta-copy {
+
+        text-align: center;
+
+        align-items: center;
+    }
+
+
+    .ga-cta-copy p {
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .ga-cta-image {
+
+        min-height: 240px;
+    }
+
+}
+
+
+/* ============================================================
+   SMALL MOBILE
+============================================================ */
+
+@media (max-width: 420px) {
+
+    .ga-hero-copy h1 {
+
+        font-size: 39px;
+    }
+
+
     .ga-section-head h2 {
+
         font-size: 31px;
     }
 
-    .ga-hero-copy h1 {
-        font-size: 43px;
+
+    .ga-trust-grid {
+
+        grid-template-columns: 1fr;
     }
+
+
+    .ga-person-photo {
+
+        height: 320px;
+    }
+
+
+    .ga-final-line h2 {
+
+        font-size: 28px;
+    }
+
 }
