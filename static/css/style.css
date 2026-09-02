@@ -673,7 +673,7 @@
 
     grid-template-columns: repeat(3, minmax(0, 1fr));
 
-    gap: 28px 30px;
+    gap: 30px;
 }
 
 
@@ -684,72 +684,94 @@
 .section-categories .celebration-card {
     position: relative;
 
+    width: 100%;
     min-width: 0;
+    height: auto;
 
-    background: transparent;
+    background: #ffffff;
 
-    border: none;
-    border-radius: 22px;
+    border: 1px solid rgba(193, 155, 84, 0.15);
+    border-radius: 24px;
 
     overflow: visible;
 
-    box-shadow: none;
+    box-shadow:
+        0 8px 28px rgba(34, 30, 24, 0.08);
 
     transition:
         transform 0.3s ease,
-        filter 0.3s ease;
+        box-shadow 0.3s ease;
 }
 
 
 .section-categories .celebration-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 16px 38px rgba(34, 30, 24, 0.13);
 }
 
 
 /* ============================================================
-   CATEGORY IMAGE – FULL IMAGE, NO CROPPING
+   CATEGORY IMAGE
+   100% WIDTH • RESPONSIVE • 3:2
    ============================================================ */
 
 .section-categories .celebration-card .category-visual {
     position: relative;
+
     width: 100%;
-    height: 325px;
+    height: auto;
+    aspect-ratio: 3 / 2;
+
     padding: 0;
-    border-radius: 22px;
-    overflow: hidden;
+    margin: 0;
+
     display: block;
-    /* — SHOW FULL IMAGE — */
-    background-position: center;
-    background-size: contain;      /* ← changed from cover */
+
+    border-radius: 24px 24px 0 0;
+
+    overflow: hidden;
+
+    background-color: #f5f0e8;
+
+    background-position: center center;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-color: #f5f0e8;     /* fallback colour */
-    box-shadow: 0 5px 18px rgba(45, 35, 25, 0.13);
+
     isolation: isolate;
 }
 
+.section-categories .celebration-card .category-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px 24px 0 0;
+}
 
-/* Dark/light image overlay */
+
+/* ============================================================
+   IMAGE OVERLAY
+   ============================================================ */
 
 .section-categories .celebration-card .category-visual::after {
     content: "";
 
     position: absolute;
-
     inset: 0;
 
     background:
         linear-gradient(
             to bottom,
-            rgba(0, 0, 0, 0.02) 0%,
-            rgba(0, 0, 0, 0.04) 50%,
-            rgba(0, 0, 0, 0.16) 100%
+            rgba(0, 0, 0, 0) 45%,
+            rgba(0, 0, 0, 0.12) 100%
         );
 
     pointer-events: none;
 
-    z-index: -1;
+    z-index: 1;
 }
-
 
 /* ============================================================
    CELEBRATION IMAGES
@@ -772,38 +794,32 @@
 
 
 .section-categories .birthday-visual {
-    background-image:
-        url("/static/images/celebrations/birthday.webp");
+    background-image: var(--img-celebration-birthday);
 }
 
 
 .section-categories .anniversary-visual {
-    background-image:
-        url("/static/images/celebrations/anniversary.webp");
+    background-image: var(--img-celebration-anniversary);
 }
 
 
 .section-categories .romantic-visual {
-    background-image:
-        url("/static/images/celebrations/romantic.webp");
+    background-image: var(--img-celebration-romantic);
 }
 
 
 .section-categories .proposal-visual {
-    background-image:
-        url("/static/images/celebrations/proposal.webp");
+    background-image: var(--img-celebration-proposal);
 }
 
 
 .section-categories .cafe-visual {
-    background-image:
-        url("/static/images/celebrations/cafe.webp");
+    background-image: var(--img-celebration-cafe);
 }
 
 
 .section-categories .custom-visual {
-    background-image:
-        url("/static/images/celebrations/custom.webp");
+    background-image: var(--img-celebration-custom);
 }
 
 
@@ -2963,7 +2979,7 @@
 /* ---------- Final CTA ---------- */
 .final-cta {
     min-height: 430px;
-    background: url("/static/images/banner.png") center/cover;
+    background: var(--img-banner) center/cover;
 }
 .final-overlay {
     min-height: 430px;

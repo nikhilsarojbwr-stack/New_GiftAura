@@ -1,0 +1,30 @@
+/* ============================================================
+   Shared image asset paths
+   Keep all image URLs in one place so pages and CSS use one source.
+   ============================================================ */
+
+:root {
+    /* Hero and global images */
+    --img-home-hero-banner: url('/static/images/home-hero-banner.jpg');
+    --img-hero-event-scene: url('/static/images/hero-event-scene.jpg');
+    --img-branch-left: url('/static/images/branch-left.png');
+    --img-cta-event-family: url('/static/images/cta-event-family.webp');
+    --img-banner: url('/static/images/banner.png');
+
+    /* About page portraits */
+    --img-vidhi: url('/static/images/vidhi.webp');
+    --img-nikhil: url('/static/images/nikhil.webp');
+    --img-timeline-01: url('/static/images/timeline-01.webp');
+    --img-timeline-02: url('/static/images/timeline-02.webp');
+    --img-timeline-03: url('/static/images/timeline-03.webp');
+    --img-timeline-04: url('/static/images/timeline-04.webp');
+    --img-timeline-05: url('/static/images/timeline-05.webp');
+
+    /* Celebration cards */
+    --img-celebration-birthday: url('/static/images/celebrations/birthday.png');
+    --img-celebration-anniversary: url('/static/images/celebrations/anniversary.webp');
+    --img-celebration-romantic: url('/static/images/celebrations/romantic.webp');
+    --img-celebration-proposal: url('/static/images/celebrations/proposal.webp');
+    --img-celebration-cafe: url('/static/images/celebrations/cafe.webp');
+    --img-celebration-custom: url('/static/images/celebrations/custom.webp');
+}

@@ -127,7 +127,7 @@
             rgba(248,244,235,.12) 65%,
             rgba(248,244,235,0) 76%
         ),
-        url('/static/images/home-hero-banner.jpg');
+        var(--img-home-hero-banner);
 }
 
 
@@ -148,7 +148,7 @@
             rgba(248,244,235,.12) 65%,
             rgba(248,244,235,0) 76%
         ),
-        url('/static/images/home-hero-banner.jpg');
+        var(--img-home-hero-banner);
 }
 
 
@@ -233,7 +233,7 @@
     transform: translateY(-50%);
 
     background:
-        url('/static/images/branch-left.png')
+        var(--img-branch-left)
         left center / contain
         no-repeat;
 
@@ -700,14 +700,14 @@
     .ga-home-hero {
 
         --hero-mobile-image:
-            url('/static/images/home-hero-banner.jpg');
+            var(--img-home-hero-banner);
     }
 
 
     .ga-about-hero {
 
         --hero-mobile-image:
-            url('/static/images/home-hero-banner.jpg');
+            var(--img-home-hero-banner);
     }
 
 
@@ -1313,34 +1313,35 @@
 
 /* branches */
 
-.ga-branch {
+.ga-beliefs {
+    position: relative;
+    overflow: hidden;
+}
 
+.ga-beliefs::before,
+.ga-beliefs::after {
+    content: "";
     position: absolute;
-
     width: 125px;
-
-    opacity: .5;
-
+    height: 200px;
+    background-image: var(--img-branch-left);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: .55;
     pointer-events: none;
 }
 
-
-.ga-branch-left {
-
+.ga-beliefs::before {
     left: -10px;
     bottom: -5px;
 }
 
-
-.ga-branch-right {
-
+.ga-beliefs::after {
     right: -10px;
     top: 15px;
-
-    transform:
-        scaleX(-1);
+    transform: scaleX(-1);
 }
-
 
 /* ============================================================
    WHY GIFTAURA
