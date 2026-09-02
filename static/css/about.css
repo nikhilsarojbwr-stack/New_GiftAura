@@ -697,7 +697,12 @@
     }
 
 
-    
+    .ga-home-hero {
+
+        --hero-mobile-image:
+            url('/static/images/home-hero-banner.webp');
+    }
+
 
     .ga-about-hero {
 
