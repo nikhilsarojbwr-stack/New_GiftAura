@@ -148,7 +148,7 @@
             rgba(248,244,235,.12) 65%,
             rgba(248,244,235,0) 76%
         ),
-        url('/static/images/hero-event-scene.webp');
+        url('/static/images/home-hero-bannr.webp');
 }
 
 
@@ -707,7 +707,7 @@
     .ga-about-hero {
 
         --hero-mobile-image:
-            url('/static/images/hero-event-scene.webp');
+            url('/static/images/home-hero-banner.webp');
     }
 
 
