@@ -3,7 +3,7 @@ import glob
 from PIL import Image
 
 # Configuration
-INPUT_DIR = "static/images/celebrations"   # folder containing original images
+INPUT_DIR = "static/images"   # folder containing original images
 OUTPUT_DIR = INPUT_DIR                     # overwrite with webp (you can backup first)
 QUALITY = 85                               # WebP quality (0-100)
 TARGET_SIZES = {
