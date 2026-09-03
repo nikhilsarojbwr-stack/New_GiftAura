@@ -1,5 +1,5 @@
 <!-- ============================================================
-    HEADER / NAVBAR (Always Visible)
+    HEADER / NAVBAR (Enhanced)
     ============================================================ -->
 
 <header class="site-header" id="header">
@@ -12,22 +12,27 @@
         </div>
     </div>
 
-    <!-- NAV LINKS — Always visible -->
+    <!-- NAV LINKS -->
     <nav class="nav-links" id="navLinks">
         <a href="/" class="nav-link">Home</a>
         <a href="/about" class="nav-link">About Us</a>
         <a href="/contact" class="nav-link">Contact</a>
     </nav>
 
-    <!-- HEADER ACTIONS (No hamburger) -->
+    <!-- HEADER ACTIONS -->
     <div class="header-actions">
-        <!-- Optional: Add search, cart, or profile icons here -->
+       
+        <div class="hamburger" id="hamburger" onclick="toggleMobileNav()">
+            <span></span><span></span><span></span>
+        </div>
     </div>
 </header>
 
-<!-- ===== NAVBAR ACTIVE STATE SCRIPT ===== -->
+<!-- ===== NAVBAR SCRIPT ===== -->
 <script>
-    // Highlight current page in navbar
+    // ============================================
+    // 1. HIGHLIGHT ACTIVE PAGE
+    // ============================================
     document.addEventListener('DOMContentLoaded', function() {
         const currentPath = window.location.pathname;
         const navLinks = document.querySelectorAll('.nav-link');
@@ -37,13 +42,43 @@
             link.classList.remove('active');
 
             // Check if the link's href matches the current path
-            if (link.getAttribute('href') === currentPath) {
+            const linkPath = link.getAttribute('href');
+            
+            // Handle exact match or root path
+            if (linkPath === currentPath || 
+                (currentPath === '/' && linkPath === '/')) {
                 link.classList.add('active');
             }
-
-            // Special case: Home page (path is "/")
-            if (currentPath === '/' && link.getAttribute('href') === '/') {
+            
+            // Handle /about vs /about/ (trailing slash)
+            if (currentPath === linkPath + '/' || linkPath === currentPath + '/') {
                 link.classList.add('active');
+            }
+        });
+
+       
+    });
+
+    // ============================================
+    // 3. MOBILE NAV TOGGLE
+    // ============================================
+    function toggleMobileNav() {
+        const nav = document.getElementById('navLinks');
+        const hamburger = document.getElementById('hamburger');
+        
+        nav.classList.toggle('mobile-open');
+        hamburger.classList.toggle('open');
+    }
+
+    // Close menu when a link is clicked (for mobile)
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+            const nav = document.getElementById('navLinks');
+            const hamburger = document.getElementById('hamburger');
+            
+            if (window.innerWidth <= 992) {
+                nav.classList.remove('mobile-open');
+                hamburger.classList.remove('open');
             }
         });
     });
