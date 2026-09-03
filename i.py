@@ -5,7 +5,7 @@ from PIL import Image
 # Configuration
 INPUT_DIR = "static/images"   # folder containing original images
 OUTPUT_DIR = INPUT_DIR                     # overwrite with webp (you can backup first)
-QUALITY = 85                               # WebP quality (0-100)
+QUALITY = 95                               # WebP quality (0-100)
 TARGET_SIZES = {
     # pattern: (max_width, max_height)
     "hero-event-scene": (1200, 800),       # hero image – displayed ~746x420 -> 2x = 1492x840
