@@ -1917,43 +1917,157 @@
             font-size: 15px;
             letter-spacing: 2px;
         }
+/* ============================================================
+   FAQ SECTION — EXTRA SPACIOUS
+============================================================ */
 
-        /* ============================================================
-                   10. FAQ & FOOTER
-                   ============================================================ */
-        .section-faq {
-            padding: var(--section-spacing);
-            background: var(--color-body-bg);
-        }
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;                        /* Increased gap between cards */
+    max-width: 900px;                 /* Slightly wider for more room */
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-        .faq-grid {
-            max-width: 800px;
-            margin: 20px auto 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0 40px;
-        }
-        .faq-item {
-            border-bottom: 1px solid var(--color-border-light);
-            padding: 14px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-        .faq-item:hover {
-            color: var(--color-primary-gold);
-        }
-        .faq-item .q {
-            font-weight: 500;
-            font-size: 14px;
-        }
-        .faq-item .plus {
-            font-size: 18px;
-            color: var(--color-primary-gold);
-            font-weight: 300;
-        }
+/* --- CARD with MORE padding --- */
+.faq-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #ffffff;
+    padding: 28px 34px;               /* ← More internal space (was 22px 30px) */
+    border-radius: 16px;              /* ← Softer, more premium */
+    border: 1px solid var(--ga-border, #e2d7c4);
+    box-shadow: 0 4px 20px rgba(30, 27, 19, 0.05);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* --- QUESTION — more space on the right --- */
+.faq-item .q {
+    flex: 1;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ga-text, #172923);
+    line-height: 1.4;
+    padding-right: 24px;              /* ← More space before the + icon (was 20px) */
+    font-family: var(--font-sans, 'Poppins', sans-serif);
+}
+
+/* --- PLUS icon — bigger and more prominent --- */
+.faq-item .plus {
+    font-size: 30px;                  /* ← Slightly larger */
+    font-weight: 300;
+    color: var(--ga-gold, #c58b35);
+    flex-shrink: 0;
+    width: 32px;                      /* ← More clickable area */
+    text-align: right;
+    transition: transform 0.3s ease;
+}
+
+/* --- ANSWER — with extra padding and a clear separator --- */
+.faq-item .faq-answer {
+    flex-basis: 100%;
+    margin-top: 18px;                 /* ← More space above answer (was 14px) */
+    padding-top: 22px;                /* ← More space inside (was 18px) */
+    padding-bottom: 4px;              /* ← Extra breathing at the bottom */
+    border-top: 2px solid rgba(197, 139, 53, 0.2);  /* ← Thicker, more visible line */
+}
+
+.faq-item .faq-answer p {
+    font-size: 16px;
+    line-height: 1.8;                 /* ← More line spacing (was 1.7) */
+    color: var(--ga-muted, #626863);
+    margin: 0;
+    font-family: var(--font-sans, 'Poppins', sans-serif);
+}
+
+/* --- HOVER & ACTIVE states --- */
+.faq-item:hover {
+    border-color: var(--ga-gold, #c58b35);
+    box-shadow: 0 8px 30px rgba(197, 139, 53, 0.08);
+}
+
+.faq-item.active {
+    border-color: var(--ga-gold, #c58b35);
+    background: rgba(247, 243, 233, 0.5);
+}
+
+/* ============================================================
+   RESPONSIVE — more space on all screens
+============================================================ */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .faq-item {
+        padding: 24px 26px;           /* Still generous on tablet */
+        border-radius: 14px;
+    }
+    .faq-item .q {
+        font-size: 17px;
+        padding-right: 18px;
+    }
+    .faq-item .plus {
+        font-size: 26px;
+        width: 28px;
+    }
+    .faq-item .faq-answer {
+        margin-top: 16px;
+        padding-top: 18px;
+    }
+    .faq-item .faq-answer p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .faq-grid {
+        gap: 18px;
+        padding: 0 12px;
+    }
+    .faq-item {
+        padding: 18px 20px;           /* Still comfortable on small screens */
+        border-radius: 12px;
+    }
+    .faq-item .q {
+        font-size: 15px;
+        padding-right: 14px;
+    }
+    .faq-item .plus {
+        font-size: 24px;
+        width: 26px;
+    }
+    .faq-item .faq-answer {
+        margin-top: 14px;
+        padding-top: 16px;
+    }
+    .faq-item .faq-answer p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 380px) {
+    .faq-item {
+        padding: 14px 16px;
+    }
+    .faq-item .q {
+        font-size: 14px;
+        padding-right: 10px;
+    }
+    .faq-item .plus {
+        font-size: 22px;
+        width: 24px;
+    }
+}
+
+
 
         /* Footer */
         .site-footer {
@@ -2047,7 +2161,6 @@
         .footer-bottom a:hover {
             color: var(--color-primary-gold);
         }
-
         /* ============================================================
                    RESPONSIVE
                    ============================================================ */
@@ -2157,9 +2270,6 @@
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 24px;
-            }
-            .faq-grid {
-                grid-template-columns: 1fr;
             }
             .dream-form {
                 grid-template-columns: 1fr;
@@ -2922,58 +3032,6 @@
     margin-top: 3px;
     color: var(--color-text-secondary);
     font-size: 10px;
-}
-
-/* ---------- FAQ ---------- */
-.faq-list {
-    max-width: 850px;
-    margin: auto;
-}
-.faq-item {
-    margin-bottom: 9px;
-    background: var(--color-white);
-    border: 1px solid var(--color-border-light);
-    border-radius: 13px;
-    overflow: hidden;
-}
-.faq-item button {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 19px 21px;
-    border: 0;
-    background: transparent;
-    color: var(--color-text-primary);
-    text-align: left;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    font-family: var(--font-sans);
-}
-.faq-item button b {
-    width: 27px;
-    height: 27px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: #f5e8d9;
-    color: var(--color-primary-gold-dark);
-    font-size: 17px;
-}
-/* Override for category FAQ – allow display toggle */
-.section-faq .faq-answer {
-    max-height: none !important;
-    overflow: visible !important;
-    transition: none !important;
-}
-.faq-answer p {
-    margin: 0;
-    padding: 0 21px 20px;
-    color: var(--color-text-secondary);
-    font-size: 12px;
-    line-height: 1.7;
 }
 
 /* ---------- Final CTA ---------- */
