@@ -1,5 +1,5 @@
 <!-- ============================================================
-    HEADER / NAVBAR (Enhanced)
+    HEADER / NAVBAR (Always Visible)
     ============================================================ -->
 
 <header class="site-header" id="header">
@@ -12,18 +12,16 @@
         </div>
     </div>
 
-    <!-- NAV LINKS -->
+    <!-- NAV LINKS — Always visible -->
     <nav class="nav-links" id="navLinks">
         <a href="/" class="nav-link">Home</a>
         <a href="/about" class="nav-link">About Us</a>
         <a href="/contact" class="nav-link">Contact</a>
     </nav>
 
-    <!-- HEADER ACTIONS -->
+    <!-- HEADER ACTIONS (No hamburger) -->
     <div class="header-actions">
-        <div class="hamburger" id="hamburger" onclick="toggleMobileNav()">
-            <span></span><span></span><span></span>
-        </div>
+        <!-- Optional: Add search, cart, or profile icons here -->
     </div>
 </header>
 
@@ -49,10 +47,4 @@
             }
         });
     });
-
-    // Mobile nav toggle function
-    function toggleMobileNav() {
-        const nav = document.getElementById('navLinks');
-        nav.classList.toggle('mobile-open');
-    }
 </script>
