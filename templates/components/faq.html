@@ -1,10 +1,10 @@
 {% block content %}
 <style>
-    /* --- FORCE SPACING FOR FAQ (direct override) --- */
+    /* --- FAQ — medium spacing, smaller text --- */
     .section-faq .faq-grid {
         display: grid !important;
         grid-template-columns: 1fr !important;
-        gap: 36px !important;
+        gap: 24px !important;
         max-width: 1000px !important;
         margin: 0 auto !important;
         padding: 0 30px !important;
@@ -16,46 +16,46 @@
         align-items: center !important;
         justify-content: space-between !important;
         background: #ffffff !important;
-        padding: 38px 44px !important;   /* ← huge internal space */
-        border-radius: 20px !important;
+        padding: 28px 34px !important;   /* ← medium internal space */
+        border-radius: 16px !important;
         border: 1px solid #e2d7c4 !important;
-        box-shadow: 0 4px 24px rgba(30, 27, 19, 0.05) !important;
+        box-shadow: 0 4px 20px rgba(30, 27, 19, 0.05) !important;
         cursor: pointer !important;
         transition: all 0.25s ease !important;
     }
 
     .section-faq .faq-item .q {
         flex: 1 !important;
-        font-size: 15px !important;
+        font-size: 14px !important;      /* ← 14px question */
         font-weight: 600 !important;
         color: #172923 !important;
         line-height: 1.5 !important;
-        padding-right: 36px !important;   /* ← lots of space before + */
+        padding-right: 24px !important;
         font-family: 'Poppins', 'Montserrat', sans-serif !important;
         margin: 0 !important;
     }
 
     .section-faq .faq-item .plus {
-        font-size: 25px !important;
+        font-size: 26px !important;
         font-weight: 300 !important;
         color: #c58b35 !important;
         flex-shrink: 0 !important;
-        width: 38px !important;
+        width: 30px !important;
         text-align: right !important;
         transition: transform 0.3s ease !important;
     }
 
     .section-faq .faq-item .faq-answer {
         flex-basis: 100% !important;
-        margin-top: 14px !important;
-        padding-top: 28px !important;
-        padding-bottom: 6px !important;
-        border-top: 2px solid rgba(197, 139, 53, 0.25) !important;
+        margin-top: 18px !important;
+        padding-top: 20px !important;
+        padding-bottom: 2px !important;
+        border-top: 2px solid rgba(197, 139, 53, 0.2) !important;
     }
 
     .section-faq .faq-item .faq-answer p {
-        font-size: 18px !important;
-        line-height: 2 !important;       /* ← very airy */
+        font-size: 13px !important;      /* ← 13px answer text */
+        line-height: 1.7 !important;
         color: #626863 !important;
         margin: 0 !important;
         padding: 0 !important;
@@ -64,7 +64,7 @@
 
     .section-faq .faq-item:hover {
         border-color: #c58b35 !important;
-        box-shadow: 0 8px 32px rgba(197, 139, 53, 0.1) !important;
+        box-shadow: 0 8px 28px rgba(197, 139, 53, 0.08) !important;
     }
 
     .section-faq .faq-item.active {
@@ -72,43 +72,17 @@
         background: rgba(247, 243, 233, 0.5) !important;
     }
 
-    /* --- responsive tweaks --- */
+    /* --- responsive --- */
     @media (max-width: 768px) {
         .section-faq .faq-item {
-            padding: 28px 30px !important;
+            padding: 22px 26px !important;
         }
         .section-faq .faq-item .q {
-            font-size: 18px !important;
-            padding-right: 24px !important;
-        }
-        .section-faq .faq-item .plus {
-            font-size: 30px !important;
-            width: 32px !important;
-        }
-        .section-faq .faq-item .faq-answer {
-            margin-top: 20px !important;
-            padding-top: 22px !important;
-        }
-        .section-faq .faq-item .faq-answer p {
-            font-size: 17px !important;
-            line-height: 1.9 !important;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .section-faq .faq-grid {
-            gap: 24px !important;
-            padding: 0 16px !important;
-        }
-        .section-faq .faq-item {
-            padding: 22px 24px !important;
-        }
-        .section-faq .faq-item .q {
-            font-size: 16px !important;
+            font-size: 13px !important;
             padding-right: 18px !important;
         }
         .section-faq .faq-item .plus {
-            font-size: 26px !important;
+            font-size: 24px !important;
             width: 28px !important;
         }
         .section-faq .faq-item .faq-answer {
@@ -116,8 +90,35 @@
             padding-top: 18px !important;
         }
         .section-faq .faq-item .faq-answer p {
-            font-size: 15px !important;
-            line-height: 1.7 !important;
+            font-size: 12px !important;
+            line-height: 1.6 !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .section-faq .faq-grid {
+            gap: 18px !important;
+            padding: 0 14px !important;
+        }
+        .section-faq .faq-item {
+            padding: 18px 20px !important;
+            border-radius: 14px !important;
+        }
+        .section-faq .faq-item .q {
+            font-size: 12px !important;
+            padding-right: 14px !important;
+        }
+        .section-faq .faq-item .plus {
+            font-size: 22px !important;
+            width: 24px !important;
+        }
+        .section-faq .faq-item .faq-answer {
+            margin-top: 14px !important;
+            padding-top: 16px !important;
+        }
+        .section-faq .faq-item .faq-answer p {
+            font-size: 12px !important;
+            line-height: 1.6 !important;
         }
     }
 </style>
