@@ -2232,3 +2232,19 @@
     padding: 0 20px;
     box-sizing: border-box;
 }
+
+
+.ga-line-icon svg {
+    width: 34px;
+    height: 34px;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.ga-line-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
